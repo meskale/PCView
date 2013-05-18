@@ -28,11 +28,11 @@ class MenuFactory {
 		foreach ($menu as $i -> $item) {
 			$menu += "<li><a href=" . $menuAction[$i] . "> ". $item . " </a></li>";
 			if (count($submenu) > 0) $menu += "<ul>";
-			foreach ($submenu as $i -> $subitem) {
-				$menu += "<li><a href=" . submenuAction[$i] . "><span>Product 1</span></a></li>";
-			}
+// 			foreach ($submenu as $i -> $subitem) {
+// 				$menu += "<li><a href=" . submenuAction[$i] . "><span>Product 1</span></a></li>";
+// 			}
 			if (count($submenu) > 0) $menu += "</ul>";
-			</li>
+
 		}
 	}
 
