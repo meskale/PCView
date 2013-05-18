@@ -154,16 +154,16 @@ class FlotteParser {
 	}
 	
 	private function getOSByNode($pc) {
-		$OS["OS_Nom"] = $this->getNode($pc, "OS", 0)->getAttribute("Nom");
-		$OS["OS_Arch"] = $this->getNode($this->getNode($pc, "OS", 0), "Arch", 0)->getAttribute("Nom");
+		$OS["Nom"] = $this->getNode($pc, "OS", 0)->getAttribute("Nom");
+		$OS["Arch"] = $this->getNode($this->getNode($pc, "OS", 0), "Arch", 0)->getAttribute("Nom");
 		
 		return $OS;
 	}
 	
 	private function getSoftware($pc, $i) {
 
-		$soft["Software_Nom"] = $this->getNode($pc, "Software", $i)->getAttribute("Nom");
-		$soft["Software_Arch"] = $this->getNode($this->getNode($pc, "Software", $i), "Arch", 0)->getAttribute("Nom");
+		$soft["Nom"] = $this->getNode($pc, "Software", $i)->getAttribute("Nom");
+		$soft["Arch"] = $this->getNode($this->getNode($pc, "Software", $i), "Arch", 0)->getAttribute("Nom");
 
 		return $soft;
 	}
