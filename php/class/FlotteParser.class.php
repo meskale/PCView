@@ -12,6 +12,10 @@ require('UTBM/class/PC.class.php');
  *	@since		1.0
  */
 class FlotteParser {
+	
+	public function FlotteParser() {
+		
+	}
 
 
 	public function parse() {
