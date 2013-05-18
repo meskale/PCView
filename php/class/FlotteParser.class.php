@@ -26,6 +26,11 @@ class FlotteParser {
 			
 			$poste = new PC();
 			
+			$tmp = array();
+			$tmp2 = array();
+			$tmp3 = array();
+			$tmp4 = array();
+			
 			$poste->setName($this->getPCNameByNode($ua));
 			$poste->setModele($this->getPCModeleByNode($ua));
 			$poste->setBIOS($this->getBIOSByNode($ua));
