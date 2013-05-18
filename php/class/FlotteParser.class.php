@@ -168,6 +168,7 @@ class FlotteParser {
 	private function getSoftware($pc, $i) {
 
 		$soft["Nom"] = $this->getNode($pc, "Software", $i)->getAttribute("Nom");
+		$soft["Version"] = $this->getNode($pc, "Software", $i)->getAttribute("Version");
 		$soft["Arch"] = $this->getNode($this->getNode($pc, "Software", $i), "Arch", 0)->getAttribute("Nom");
 
 		return $soft;

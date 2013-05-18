@@ -67,7 +67,7 @@
       <OS Nom="Windows 7 Professionnel">
         <Arch Nom="x64" />
       </OS>
-      <Software Nom="Office">
+      <Software Nom="Office" Version="2010">
       	<Arch Nom="x64" />
       </Software>
     </Softwares>
@@ -138,7 +138,7 @@
       <OS Nom="Windows 8 Professionnel">
         <Arch Nom="IA_64" />
       </OS>
-      <Software Nom="Office10">
+      <Software Nom="Office" Version="2012">
       	<Arch Nom="IA_64" />
       </Software>
     </Softwares>
