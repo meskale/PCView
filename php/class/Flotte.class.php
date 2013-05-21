@@ -43,7 +43,7 @@ class Flotte {
 					echo "<li id=\"stockage\">Stockage " . ($i+1) . " : </li>" ;                                                               
 					echo "<ul>" ;                                                                                                                              
 					foreach($ua->getStockages()[$i] as $key => $stoParam) {                                                      
-						echo "<li>" . $key . " : " . $stoParam . "</li>";          
+						echo "<li id=\"item\">" . $key . " : " . $stoParam . "</li>";          
 					}     
 					echo "</ul>" ;					
                                                                                                                                  
@@ -57,7 +57,7 @@ class Flotte {
 					echo "<li id=\"interface\">Interface " . ($i+1) . " : </li>" ; 
 					echo "<ul>" ;					
 					foreach($ua->getInterfaces()[$i] as $key => $intParam) {                                                     
-						echo "<li>" . $key . " : " . $intParam . "</li>";          
+						echo "<li id=\"item\">" . $key . " : " . $intParam . "</li>";          
 					}      
 					echo "</ul>" ;
                                                                                                                                  
@@ -72,7 +72,7 @@ class Flotte {
 					echo "<li id=\"peripherique\">Périphérique " . ($i+1) . " : </li>" ; 
 					echo "<ul>" ;					
 					foreach($ua->getPeripheriques()[$i] as $key => $perParam) {                                                  
-						echo "<li>" . $key . " : " . $perParam . "</li>";          
+						echo "<li id=\"item\">" . $key . " : " . $perParam . "</li>";          
 					}                                                                                                            
 					echo "</ul>" ;
 				}    
@@ -82,7 +82,7 @@ class Flotte {
                 
 				echo "<ul>" ;				
 				foreach($ua->getCPU() as $key => $cpuParam) {                                                                    
-					echo "<li>" . $key . " : " . $cpuParam . "</li>";              
+					echo "<li id=\"item\">" . $key . " : " . $cpuParam . "</li>";              
 				}                                         
 				echo "</ul><br />" ;
                                                                                                                                  
@@ -90,7 +90,7 @@ class Flotte {
                 
 				echo "<ul>" ;                                                                                                                 
 				foreach($ua->getCM() as $key => $cmParam) {                                                                      
-					echo "<li>" . $key . " : " . $cmParam . "</li>";               
+					echo "<li id=\"item\">" . $key . " : " . $cmParam . "</li>";               
 				}
 				echo "</ul><br />" ;
                                                                                                                                  
@@ -98,7 +98,7 @@ class Flotte {
                 
 				echo "<ul>" ;
 				foreach($ua->getRAM() as $key => $ramParam) {                                                                    
-					echo "<li>" . $key . " : " . $ramParam . "</li>";              
+					echo "<li id=\"item\">" . $key . " : " . $ramParam . "</li>";              
 				}                 
 				echo "</ul><br />" ;
                                                                                                                                  
@@ -106,7 +106,7 @@ class Flotte {
                              
 				echo "<ul>" ;
 				foreach($ua->getGPU() as $key => $gpuParam) {                                                                    
-					echo "<li>" . $key . " : " . $gpuParam . "</li>";              
+					echo "<li id=\"item\">" . $key . " : " . $gpuParam . "</li>";              
 				}     
 				echo "</ul><br />" ;
                                                                                                                                  
@@ -114,7 +114,7 @@ class Flotte {
                                                                                                                                  
 				echo "<ul>" ;
 				foreach($ua->getBIOS() as $key => $biosParam) {                                                                  
-					echo "<li>" . $key . " : " . $biosParam . "</li>";             
+					echo "<li id=\"item\">" . $key . " : " . $biosParam . "</li>";             
 				}
 				echo "</ul><br />" ;
                                                                                                                                  
@@ -125,7 +125,7 @@ class Flotte {
 					echo "<li id=\"soft\">Soft " . ($i+1) . " : </li>" ;
 					echo "<ul>" ;					
 					foreach($ua->getSoftwares()[$i] as $key => $softParam) {                                                     
-						echo "<li>" . $key . " : " . $softParam . "</li>";         
+						echo "<li id=\"item\">" . $key . " : " . $softParam . "</li>";         
 					}
 					echo "</ul>" ;
                                                                                                                                  
@@ -137,10 +137,16 @@ class Flotte {
                                                                                                                                  
 				echo "<ul>" ;
 				foreach($ua->getOS() as $key => $osParam) {                                                                      
-					echo "<li>" . $key . " : " . $osParam . "</li>";               
+					echo "<li id=\"item\">" . $key . " : " . $osParam . "</li>";               
 				}  
 				echo "</ul><br />" ;
 				echo "</ul><br />" ;
+		
+				$a = snmp2_walk("127.0.0.1", "public", "");
+
+				foreach ($a as $val) {
+					echo "$val\n";
+				}
 				
 				break;
 			}                                                                                                                    

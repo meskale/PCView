@@ -1,18 +1,24 @@
 #pc{
   font-size: 32px;
   text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
-  font-family:Arial, Helvetica, sans-serif;
-  font-size:400%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 700%;
   color: #090;
-  padding:16px;
-  font-weight:lighter;
+  padding: 16px;
+  font-weight: lighter;
   -moz-box-shadow: 2px 2px 6px #888;  
   -webkit-box-shadow: 2px 2px 6px #888;  
-  box-shadow:2px 2px 6px #888;  
-  text-align:center;
-  display:block;
-  margin:16px;
-  background-image:url(UTBM/img/homer_ordi.jpg);  
+  box-shadow: 2px 2px 6px #888;  
+  text-align: center;
+  display: block;
+  margin: 16px;
+  padding-bottom: 100px;
+  background-image: url(/UTBM/img/homer_ordi.jpg);
+}
+
+#item {
+	list-style-position: inherit;
+	margin-left: 200px;
 }
 
 
@@ -20,15 +26,17 @@
  font-family: Arial, sans-serif;
  font-size: 100%;
  color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+ display: list-item;
+ list-style-image: url(puce.jpg);
 }
 #stockage {
  font-family: Arial, sans-serif;
  font-size: 100%;
  color: black;
  display : list-item;
- list-style-image : url(puce.gif);
+ padding-left: 40px;
+ background: url(/UTBM/img/stockage.jpg) left center no-repeat;
+ list-style-position: inside;
 }
 
 
@@ -44,7 +52,9 @@
  font-size: 100%;
  color: black;
  display : list-item;
- list-style-image : url(puce.gif);
+ padding-left: 40px;
+ background: url(/UTBM/img/interface.jpg) left center no-repeat;
+ list-style-position: inside;
 }
 
 
