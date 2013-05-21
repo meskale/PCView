@@ -1,5 +1,7 @@
 <?php                                                                                                                            
-                                                                                                                                 
+
+
+echo "<LINK rel=\"stylesheet\" type=\"text/css\" href=\"UTBM/css/list.css\">";
 /**                                                                                                                              
  *	@desc                                                                                                                        
  *	@package                                                                                                                     
@@ -11,7 +13,7 @@
 class Flotte {                                                                                                                   
                                                                                                                                  
                                                                                                                                  
-	public function Flotte() {                                                                                                   
+	public function __construct() {                                                                                                   
 		$PCArray;                                                                                                                
                                                                                                                                  
 	}                                                                                                                            
@@ -30,15 +32,15 @@ class Flotte {
                                                                                                                                  
 			if ($ua->getName() == $name ) {                                                                                      
                                                                                                                                  
-				echo "<h1>PC " . ($i+1) . " : " .$ua->getName() . "</h1></br>";     
+				echo "<h1 id=\"pc\">PC " . ($i+1) . " : " .$ua->getName() . "</h1></br>";     
 				
 				echo "<ul>" ;
                                                                                                                                  
-				echo "<li><h2>Stockages : </h2></li>";                                                      
+				echo "<li id=\"stockages\"><h2>Stockages : </h2></li>";                                                      
                           
 				echo "<ul>" ;
 				for ( $i = 0 ; $i < count($ua->getStockages()) ; $i++) {                                                         
-					echo "<li>Stockage " . ($i+1) . " : </li>" ;                                                               
+					echo "<li id=\"stockage\">Stockage " . ($i+1) . " : </li>" ;                                                               
 					echo "<ul>" ;                                                                                                                              
 					foreach($ua->getStockages()[$i] as $key => $stoParam) {                                                      
 						echo "<li>" . $key . " : " . $stoParam . "</li>";          
@@ -48,11 +50,11 @@ class Flotte {
 				} 
 				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<li><h2>Interfaces : </h2></li>";         
+				echo "<li id=\"interfaces\"><h2>Interfaces : </h2></li>";         
 				
 				echo "<ul>" ;
 				for ( $i = 0 ; $i < count($ua->getInterfaces()) ; $i++) {                                                        
-					echo "<li>Interface " . ($i+1) . " : </li>" ; 
+					echo "<li id=\"interface\">Interface " . ($i+1) . " : </li>" ; 
 					echo "<ul>" ;					
 					foreach($ua->getInterfaces()[$i] as $key => $intParam) {                                                     
 						echo "<li>" . $key . " : " . $intParam . "</li>";          
@@ -63,11 +65,11 @@ class Flotte {
 				echo "</ul><br />" ;	
 					
                                                                                                                                  
-				echo "<li><h2>Périphériques : </h2></li>";                                                  
+				echo "<li id=\"peripheriques\"><h2>Périphériques : </h2></li>";                                                  
                 
 				echo "<ul>" ;                                                                                                                
 				for ( $i = 0 ; $i < count($ua->getPeripheriques()) ; $i++) {                                                     
-					echo "<li>Périphérique " . ($i+1) . " : </li>" ; 
+					echo "<li id=\"peripherique\">Périphérique " . ($i+1) . " : </li>" ; 
 					echo "<ul>" ;					
 					foreach($ua->getPeripheriques()[$i] as $key => $perParam) {                                                  
 						echo "<li>" . $key . " : " . $perParam . "</li>";          
@@ -76,7 +78,7 @@ class Flotte {
 				}    
 				echo "</ul><br />" ;				
                                                                                                                                  
-				echo "<li><h2>CPU : </h2></li>";                                                            
+				echo "<li id=\"cpu\"><h2>CPU : </h2></li>";                                                            
                 
 				echo "<ul>" ;				
 				foreach($ua->getCPU() as $key => $cpuParam) {                                                                    
@@ -84,7 +86,7 @@ class Flotte {
 				}                                         
 				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<li><h2>Carte Mère : </h2></li>";                                                     
+				echo "<li id=\"cm\"><h2>Carte Mère : </h2></li>";                                                     
                 
 				echo "<ul>" ;                                                                                                                 
 				foreach($ua->getCM() as $key => $cmParam) {                                                                      
@@ -92,7 +94,7 @@ class Flotte {
 				}
 				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<li><h2>RAM : </h2></li>";                                                            
+				echo "<li id=\"ram\"><h2>RAM : </h2></li>";                                                            
                 
 				echo "<ul>" ;
 				foreach($ua->getRAM() as $key => $ramParam) {                                                                    
@@ -100,7 +102,7 @@ class Flotte {
 				}                 
 				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<li><h2>GPU : </h2></li>";                                                            
+				echo "<li id=\"gpu\"><h2>GPU : </h2></li>";                                                            
                              
 				echo "<ul>" ;
 				foreach($ua->getGPU() as $key => $gpuParam) {                                                                    
@@ -108,7 +110,7 @@ class Flotte {
 				}     
 				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<li><h2>BIOS: </h2></li>";                                                            
+				echo "<li id=\"bios\"><h2>BIOS: </h2></li>";                                                            
                                                                                                                                  
 				echo "<ul>" ;
 				foreach($ua->getBIOS() as $key => $biosParam) {                                                                  
@@ -116,11 +118,11 @@ class Flotte {
 				}
 				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<li><h2>Softwares : </h2></li>";                                                      
+				echo "<li id=\"softwares\"><h2>Softwares : </h2></li>";                                                      
                                                                                                                                  
 				echo "<ul>" ;
 				for ( $i = 0 ; $i < count($ua->getSoftwares()) ; $i++) {                                                         
-					echo "<li>Soft " . ($i+1) . " : </li>" ;
+					echo "<li id=\"soft\">Soft " . ($i+1) . " : </li>" ;
 					echo "<ul>" ;					
 					foreach($ua->getSoftwares()[$i] as $key => $softParam) {                                                     
 						echo "<li>" . $key . " : " . $softParam . "</li>";         
@@ -131,7 +133,7 @@ class Flotte {
 				echo "</ul><br />" ;
                                                                                                                                  
                                                                                                                                  
-				echo "<li><h2>OS : </h2></li>";                                                             
+				echo "<li id=\"os\"><h2>OS : </h2></li>";                                                             
                                                                                                                                  
 				echo "<ul>" ;
 				foreach($ua->getOS() as $key => $osParam) {                                                                      

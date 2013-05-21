@@ -1,0 +1,118 @@
+#pc {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+
+#stockages {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#stockage {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+
+#interfaces {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#interface {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+
+#peripheriques {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#peripherique {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+
+#cpu {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#cm {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#ram {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#gpu {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+#bios {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+
+#softwares {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+#soft {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
+
+
+#os {
+ font-family: Arial, sans-serif;
+ font-size: 100%;
+ color: black;
+ display : list-item;
+ list-style-image : url(puce.gif);
+}
