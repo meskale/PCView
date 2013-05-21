@@ -33,7 +33,7 @@
 				</Peripherique>
 				<Peripherique Nom="imprimante">
 					<Connectique Nom="LPT" />
-					<TYPE>WIZIWIG!!</TYPE>
+					<TYPE>Une printeuse </TYPE>
 				</Peripherique>
 			</Peripheriques>
 			<CPU Nom="i7">
