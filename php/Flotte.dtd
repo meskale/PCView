@@ -19,7 +19,7 @@
 
 <!ELEMENT Id (Nom,Modele) >
 
-<!ELEMENT Interfaces (Interface) >
+<!ELEMENT Interfaces (Interface+) >
 
 <!ELEMENT Interface (TYPE,Adresse) >
 <!ATTLIST Interface 
