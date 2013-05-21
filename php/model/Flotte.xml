@@ -110,6 +110,10 @@
           <Connectique Nom="HDMI" />
           <TYPE>21pouces</TYPE>
         </Peripherique>
+		<Peripherique Nom="Ecran3">
+          <Connectique Nom="HDMI" />
+          <TYPE>21pouces</TYPE>
+        </Peripherique>
       </Peripheriques>
       <CPU Nom="i7">
         <Freq Unite="GHz">3.5</Freq>
@@ -135,10 +139,25 @@
       <BIOS Nom="BiosX" Version="1.2" />
     </Config>
     <Softwares>
-      <OS Nom="Windows 8 Professionnel">
+      <OS Nom="Windows 8 Caca">
         <Arch Nom="IA_64" />
       </OS>
       <Software Nom="Office" Version="2012">
+      	<Arch Nom="IA_64" />
+      </Software>
+	  <Software Nom="Office" Version="2010">
+      	<Arch Nom="IA_64" />
+      </Software>
+	  <Software Nom="Office" Version="2007">
+      	<Arch Nom="IA_64" />
+      </Software>
+	  <Software Nom="Office" Version="2003">
+      	<Arch Nom="IA_64" />
+      </Software>
+	  <Software Nom="Office" Version="2000">
+      	<Arch Nom="IA_64" />
+      </Software>
+	  <Software Nom="Office" Version="1999">
       	<Arch Nom="IA_64" />
       </Software>
     </Softwares>

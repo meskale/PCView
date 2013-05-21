@@ -150,7 +150,7 @@ class FlotteParser {
 	}
 	
 	private function getSoftwares($pc) {
-		return $this->getNodes($pc, "Softwares");
+		return $this->getNodes($pc, "Software");
 	}
 
 	private function getPeripherique($pc, $i) {
