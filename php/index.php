@@ -33,7 +33,6 @@
 
 	<div id="content">
 	
-	<section>
 		<?php
 
 		require('class/FlotteParser.class.php');
@@ -67,7 +66,6 @@
 		}
 
 		?>
-		</section>
 
 	</div>
 	
