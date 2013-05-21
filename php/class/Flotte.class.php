@@ -142,11 +142,11 @@ class Flotte {
 				echo "</ul><br />" ;
 				echo "</ul><br />" ;
 		
-				$a = snmp2_walk("127.0.0.1", "public", "");
+// 				$a = snmp2_walk("127.0.0.1", "public", "");
 
-				foreach ($a as $val) {
-					echo "$val\n";
-				}
+// 				foreach ($a as $val) {
+// 					echo "$val\n";
+// 				}
 				
 				break;
 			}                                                                                                                    
