@@ -48,10 +48,10 @@ class Flotte {
 
 			}
 
-			echo "<blockquote><h2>Périphériques : </h2></blockquote></br>";
+			echo "<blockquote><h2>PÃ©riphÃ©riques : </h2></blockquote></br>";
 
 			for ( $i = 0 ; $i < count($ua->getPeripheriques()) ; $i++) {
-				echo " 		Périphérique " . ($i+1) . " : </br>" ;
+				echo " 		PÃ©riphÃ©rique " . ($i+1) . " : </br>" ;
 				foreach($ua->getPeripheriques()[$i] as $key => $perParam) {
 					echo "<blockquote><blockquote>" . $key . " : " . $perParam . "</br></blockquote></blockquote>";
 				}
@@ -64,7 +64,7 @@ class Flotte {
 				echo "<blockquote><blockquote>" . $key . " : " . $cpuParam . "</br></blockquote></blockquote>";
 			}
 
-			echo "<blockquote><h2>Carte Mère : </h2></blockquote></br>";
+			echo "<blockquote><h2>Carte Mï¿½re : </h2></blockquote></br>";
 
 			foreach($ua->getCM() as $key => $cmParam) {
 				echo "<blockquote><blockquote>" . $key . " : " . $cmParam . "</br></blockquote></blockquote>";
