@@ -45,9 +45,7 @@
 		echo "<h2>Il y a " . count($flotte->getFlotte()) . " PC dans la flotte</h2>";
 
 		?>
-		</section>
 
-		<section>
 		<?php
 
 		echo "<FORM  METHOD=\"GET\" ENCTYPE=\"x-www-form-urlencoded\"> ";
@@ -73,14 +71,13 @@
 <footer>
 
 	<br />
-	<adress> 4 rue des Jasmins <br />
+	4 rue des Jasmins <br />
 	<span class="cp">68190</span> <span class="city">ENSISHEIM</span>
 	<p class="telmail">
 		<span class="tel"> <span class="intitule">Téléphone : </span>06 66 79 17 62 </span> 
-		</br>
+		<br />
 		<span class="mail"> <span class="intitule">Mail : </span>cebim68@gmail.com </span>
 	</P>
-	</adress>
 
 	<br /> <a href="#header" title="Haut de la page">Haut de la page</a>
 </footer>
