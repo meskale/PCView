@@ -13,7 +13,7 @@
 			<li class="active\"><a href="Accueil.html\"> Accueil </a></li>
 			<li><a href="Forums.html"> Forums </a></li>
 			<li><a href="Livre_or.html"> Livre d'or </a></li>
-			<li><a href="Equipe.html"> L'équipe </a></li>
+			<li><a href="Equipe.html"> L'ï¿½quipe </a></li>
 			<li><a href="Inscription.html"> S'inscrire </a></li>
 			<li><a href="Connexion.html"> Se connecter </a></li>
 			<li class='has-sub'><a href='#'><span>Products</span> </a>
@@ -39,6 +39,14 @@
 	$flotte = $parser->parse();
 
 	echo "<h2>Il y a " . count($flotte->getFlotte()) . " PC dans la flotte</h2>";
+	
+	echo "<FORM>";
+	echo "<SELECT name=\"nom\" size=\"1\">";
+	foreach ($flotte->getFlotte() as $PC) {
+		echo "<OPTION>" . $PC->getName();
+	}
+	echo "</SELECT>";
+	echo "</FORM>";
 
 	$flotte->display();
 
