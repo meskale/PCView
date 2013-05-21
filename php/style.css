@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+body
+{
+	background: #BBBBBB;
+	
+}
+
+#content
+{
+	width : 100%;
+	border : 1px solid;
+	
+}
+.tab ,td
+{
+	width : 100%;
+	padding : 10px;
+	border : 1px solid ;
+}
+
+#tabPc ,li
+{
+	
+	padding : 10px;
+	
+}
+
+#header
+{
+	text-align : center;
+	margin-left : 20%;
+	width : 70%;
+	height: 10%;
+	background : #CCCCCC;
+}
