@@ -13,7 +13,7 @@ require('UTBM/class/PC.class.php');
  */
 class FlotteParser {
 	
-	public function FlotteParser() {
+	public function __construct() {
 		
 	}
 
