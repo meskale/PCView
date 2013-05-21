@@ -67,15 +67,13 @@
 			<footer>
 
 	<br />
+	
 	<adress> 4 rue des Jasmins </br>
 	<span class="cp">68190</span> <span class="city">ENSISHEIM</span>
 	<p class="telmail">
-		<span class="tel"> <spanclass"intitule"> Téléphone : 
-		
-		</span>06 66 79 17 62 </span> <span class="mail"> <spanclass"intitule">
-			Mail : 
-		
-		</span>cebim68@gmail.com </span>
+		<span class="tel"> <span class="intitule">Téléphone : </span>06 66 79 17 62 </span> 
+		</br>
+		<span class="mail"> <span class="intitule">Mail : </span>cebim68@gmail.com </span>
 	</P>
 	</adress>
 
