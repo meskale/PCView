@@ -74,7 +74,7 @@
 <footer>
 
 	<br />
-	<adress> 4 rue des Jasmins </br>
+	<adress> 4 rue des Jasmins <br />
 	<span class="cp">68190</span> <span class="city">ENSISHEIM</span>
 	<p class="telmail">
 		<span class="tel"> <span class="intitule">Téléphone : </span>06 66 79 17 62 </span> 

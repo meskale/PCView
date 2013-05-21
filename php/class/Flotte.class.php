@@ -23,173 +23,123 @@ class Flotte {
 	public function getFlotte() {                                                                                                
 		return $this->PCArray;                                                                                                   
 	}                                                                                                                            
-                                                                                                                                 
-	public function display() {                                                                                                  
-		foreach($this->getFlotte() as $i => $ua) {                                                                               
-			echo "<h1>PC " . ($i+1) . " : " .$ua->getName() . "</h1></br>";                                                      
-                                                                                                                                 
-			echo "<blockquote><h2>Stockages : </h2></blockquote></br>";                                                          
-                                                                                                                                 
-			for ( $i = 0 ; $i < count($ua->getStockages()) ; $i++) {                                                             
-				echo " 		Stockage " . ($i+1) . " : </br>" ;                                                                   
-				foreach($ua->getStockages()[$i] as $key => $stoParam) {                                                          
-					echo "<blockquote><blockquote>" . $key . " : " . $stoParam . "</br></blockquote></blockquote>";              
-				}                                                                                                                
-                                                                                                                                 
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>Interfaces : </h2>  </blockquote></br>";                                                       
-                                                                                                                                 
-			for ( $i = 0 ; $i < count($ua->getInterfaces()) ; $i++) {                                                            
-				echo " 		Interface " . ($i+1) . " : </br>" ;                                                                  
-				foreach($ua->getInterfaces()[$i] as $key => $intParam) {                                                         
-					echo "<blockquote><blockquote>" . $key . " : " . $intParam . "</br></blockquote></blockquote>";              
-				}                                                                                                                
-                                                                                                                                 
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>Périphériques : </h2></blockquote></br>";                                                      
-                                                                                                                                 
-			for ( $i = 0 ; $i < count($ua->getPeripheriques()) ; $i++) {                                                         
-				echo " 		Périphérique " . ($i+1) . " : </br>" ;                                                               
-				foreach($ua->getPeripheriques()[$i] as $key => $perParam) {                                                      
-					echo "<blockquote><blockquote>" . $key . " : " . $perParam . "</br></blockquote></blockquote>";              
-				}                                                                                                                
-                                                                                                                                 
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>CPU : </h2></blockquote></br>";                                                                
-                                                                                                                                 
-			foreach($ua->getCPU() as $key => $cpuParam) {                                                                        
-				echo "<blockquote><blockquote>" . $key . " : " . $cpuParam . "</br></blockquote></blockquote>";                  
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>Carte Mère : </h2></blockquote></br>";                                                         
-                                                                                                                                 
-			foreach($ua->getCM() as $key => $cmParam) {                                                                          
-				echo "<blockquote><blockquote>" . $key . " : " . $cmParam . "</br></blockquote></blockquote>";                   
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>RAM : </h2></blockquote></br>";                                                                
-                                                                                                                                 
-			foreach($ua->getRAM() as $key => $ramParam) {                                                                        
-				echo "<blockquote><blockquote>" . $key . " : " . $ramParam . "</br></blockquote></blockquote>";                  
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>GPU : </h2></blockquote></br>";                                                                
-                                                                                                                                 
-			foreach($ua->getGPU() as $key => $gpuParam) {                                                                        
-				echo "<blockquote><blockquote>" . $key . " : " . $gpuParam . "</br></blockquote></blockquote>";                  
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>BIOS: </h2></blockquote></br>";                                                                
-                                                                                                                                 
-			foreach($ua->getBIOS() as $key => $biosParam) {                                                                      
-				echo "<blockquote><blockquote>" . $key . " : " . $biosParam . "</br></blockquote></blockquote>";                 
-			}                                                                                                                    
-                                                                                                                                 
-			echo "<blockquote><h2>Softwares : </h2></blockquote></br>";                                                          
-                                                                                                                                 
-			for ( $i = 0 ; $i < count($ua->getSoftwares()) ; $i++) {                                                             
-				echo " 		Soft " . ($i+1) . " : </br>" ;                                                                       
-				foreach($ua->getSoftwares()[$i] as $key => $softParam) {                                                         
-					echo "<blockquote><blockquote>" . $key . " : " . $softParam . "</br></blockquote></blockquote>";             
-				}                                                                                                                
-                                                                                                                                 
-			}                                                                                                                    
-                                                                                                                                 
-                                                                                                                                 
-			echo "<blockquote><h2>OS : </h2></blockquote></br>";                                                                 
-                                                                                                                                 
-			foreach($ua->getOS() as $key => $osParam) {                                                                          
-				echo "<blockquote><blockquote>" . $key . " : " . $osParam . "</br></blockquote></blockquote>";                   
-			}                                                                                                                    
-		}                                                                                                                        
-	}                                                                                                                            
+                                                                                                                                                                                                                                                          
                                                                                                                                  
 	public function displayByName($name) {                                                                                       
 		foreach($this->getFlotte() as $i => $ua) {                                                                               
                                                                                                                                  
 			if ($ua->getName() == $name ) {                                                                                      
                                                                                                                                  
-				echo "<h1>PC " . ($i+1) . " : " .$ua->getName() . "</h1></br>";                                                  
+				echo "<h1>PC " . ($i+1) . " : " .$ua->getName() . "</h1></br>";     
+				
+				echo "<ul>" ;
                                                                                                                                  
-				echo "<blockquote><h2>Stockages : </h2></blockquote></br>";                                                      
-                                                                                                                                 
+				echo "<li><h2>Stockages : </h2></li>";                                                      
+                          
+				echo "<ul>" ;
 				for ( $i = 0 ; $i < count($ua->getStockages()) ; $i++) {                                                         
-					echo " 		Stockage " . ($i+1) . " : </br>" ;                                                               
+					echo "<li>Stockage " . ($i+1) . " : </li>" ;                                                               
+					echo "<ul>" ;                                                                                                                              
 					foreach($ua->getStockages()[$i] as $key => $stoParam) {                                                      
-						echo "<blockquote><blockquote>" . $key . " : " . $stoParam . "</br></blockquote></blockquote>";          
-					}                                                                                                            
+						echo "<li>" . $key . " : " . $stoParam . "</li>";          
+					}     
+					echo "</ul>" ;					
                                                                                                                                  
-				}                                                                                                                
+				} 
+				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<blockquote><h2>Interfaces : </h2>  </blockquote></br>";                                                   
-                                                                                                                                 
+				echo "<li><h2>Interfaces : </h2></li>";         
+				
+				echo "<ul>" ;
 				for ( $i = 0 ; $i < count($ua->getInterfaces()) ; $i++) {                                                        
-					echo " 		Interface " . ($i+1) . " : </br>" ;                                                              
+					echo "<li>Interface " . ($i+1) . " : </li>" ; 
+					echo "<ul>" ;					
 					foreach($ua->getInterfaces()[$i] as $key => $intParam) {                                                     
-						echo "<blockquote><blockquote>" . $key . " : " . $intParam . "</br></blockquote></blockquote>";          
-					}                                                                                                            
+						echo "<li>" . $key . " : " . $intParam . "</li>";          
+					}      
+					echo "</ul>" ;
                                                                                                                                  
-				}                                                                                                                
+				}
+				echo "</ul><br />" ;	
+					
                                                                                                                                  
-				echo "<blockquote><h2>Périphériques : </h2></blockquote></br>";                                                  
-                                                                                                                                 
+				echo "<li><h2>Périphériques : </h2></li>";                                                  
+                
+				echo "<ul>" ;                                                                                                                
 				for ( $i = 0 ; $i < count($ua->getPeripheriques()) ; $i++) {                                                     
-					echo " 		Périphérique " . ($i+1) . " : </br>" ;                                                           
+					echo "<li>Périphérique " . ($i+1) . " : </li>" ; 
+					echo "<ul>" ;					
 					foreach($ua->getPeripheriques()[$i] as $key => $perParam) {                                                  
-						echo "<blockquote><blockquote>" . $key . " : " . $perParam . "</br></blockquote></blockquote>";          
+						echo "<li>" . $key . " : " . $perParam . "</li>";          
 					}                                                                                                            
+					echo "</ul>" ;
+				}    
+				echo "</ul><br />" ;				
                                                                                                                                  
-				}                                                                                                                
-                                                                                                                                 
-				echo "<blockquote><h2>CPU : </h2></blockquote></br>";                                                            
-                                                                                                                                 
+				echo "<li><h2>CPU : </h2></li>";                                                            
+                
+				echo "<ul>" ;				
 				foreach($ua->getCPU() as $key => $cpuParam) {                                                                    
-					echo "<blockquote><blockquote>" . $key . " : " . $cpuParam . "</br></blockquote></blockquote>";              
-				}                                                                                                                
+					echo "<li>" . $key . " : " . $cpuParam . "</li>";              
+				}                                         
+				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<blockquote><h2>Carte Mère : </h2></blockquote></br>";                                                     
-                                                                                                                                 
+				echo "<li><h2>Carte Mère : </h2></li>";                                                     
+                
+				echo "<ul>" ;                                                                                                                 
 				foreach($ua->getCM() as $key => $cmParam) {                                                                      
-					echo "<blockquote><blockquote>" . $key . " : " . $cmParam . "</br></blockquote></blockquote>";               
-				}                                                                                                                
+					echo "<li>" . $key . " : " . $cmParam . "</li>";               
+				}
+				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<blockquote><h2>RAM : </h2></blockquote></br>";                                                            
-                                                                                                                                 
+				echo "<li><h2>RAM : </h2></li>";                                                            
+                
+				echo "<ul>" ;
 				foreach($ua->getRAM() as $key => $ramParam) {                                                                    
-					echo "<blockquote><blockquote>" . $key . " : " . $ramParam . "</br></blockquote></blockquote>";              
-				}                                                                                                                
+					echo "<li>" . $key . " : " . $ramParam . "</li>";              
+				}                 
+				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<blockquote><h2>GPU : </h2></blockquote></br>";                                                            
-                                                                                                                                 
+				echo "<li><h2>GPU : </h2></li>";                                                            
+                             
+				echo "<ul>" ;
 				foreach($ua->getGPU() as $key => $gpuParam) {                                                                    
-					echo "<blockquote><blockquote>" . $key . " : " . $gpuParam . "</br></blockquote></blockquote>";              
-				}                                                                                                                
+					echo "<li>" . $key . " : " . $gpuParam . "</li>";              
+				}     
+				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<blockquote><h2>BIOS: </h2></blockquote></br>";                                                            
+				echo "<li><h2>BIOS: </h2></li>";                                                            
                                                                                                                                  
+				echo "<ul>" ;
 				foreach($ua->getBIOS() as $key => $biosParam) {                                                                  
-					echo "<blockquote><blockquote>" . $key . " : " . $biosParam . "</br></blockquote></blockquote>";             
-				}                                                                                                                
+					echo "<li>" . $key . " : " . $biosParam . "</li>";             
+				}
+				echo "</ul><br />" ;
                                                                                                                                  
-				echo "<blockquote><h2>Softwares : </h2></blockquote></br>";                                                      
+				echo "<li><h2>Softwares : </h2></li>";                                                      
                                                                                                                                  
+				echo "<ul>" ;
 				for ( $i = 0 ; $i < count($ua->getSoftwares()) ; $i++) {                                                         
-					echo " 		Soft " . ($i+1) . " : </br>" ;                                                                   
+					echo "<li>Soft " . ($i+1) . " : </li>" ;
+					echo "<ul>" ;					
 					foreach($ua->getSoftwares()[$i] as $key => $softParam) {                                                     
-						echo "<blockquote><blockquote>" . $key . " : " . $softParam . "</br></blockquote></blockquote>";         
-					}                                                                                                            
+						echo "<li>" . $key . " : " . $softParam . "</li>";         
+					}
+					echo "</ul>" ;
                                                                                                                                  
-				}                                                                                                                
+				}          
+				echo "</ul><br />" ;
                                                                                                                                  
                                                                                                                                  
-				echo "<blockquote><h2>OS : </h2></blockquote></br>";                                                             
+				echo "<li><h2>OS : </h2></li>";                                                             
                                                                                                                                  
+				echo "<ul>" ;
 				foreach($ua->getOS() as $key => $osParam) {                                                                      
-					echo "<blockquote><blockquote>" . $key . " : " . $osParam . "</br></blockquote></blockquote>";               
-				}       
+					echo "<li>" . $key . " : " . $osParam . "</li>";               
+				}  
+				echo "</ul><br />" ;
+				echo "</ul><br />" ;
+				
 				break;
 			}                                                                                                                    
 			                                                                                                               
