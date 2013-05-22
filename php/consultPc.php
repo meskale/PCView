@@ -9,11 +9,13 @@ require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
 $pc = $flotte->getPcById($_GET["id"]);
-$stockage = $pc->getElementsByTagName("Stockage");
-$interfaces = $pc->getElementsByTagName("Interface");
-$peripheriques = $pc->getElementsByTagName("Peripherique");
-$cpu = $pc->getElementsByTagName("CPU");
-$ram = $pc->getElementsByTagName("RAM");
+$stockage 		= $pc->getElementsByTagName("Stockage");
+$interfaces 	= $pc->getElementsByTagName("Interface");
+$peripheriques  = $pc->getElementsByTagName("Peripherique");
+$cpu 			= $pc->getElementsByTagName("CPU");
+$ram 			= $pc->getElementsByTagName("RAM");
+$cm 			= $pc->getElementsByTagName("CM");
+$gpu 			= $pc->getElementsByTagName("GPU");
 
 ?>
 <!DOCTYPE html >
@@ -32,17 +34,7 @@ $ram = $pc->getElementsByTagName("RAM");
 	</header>
 	<div id="content">
 		<article id="hardware">
-
-			<!-- 			<CPU Nom="i7">
-				<Freq Unite="GHz">3.4</Freq>
-				<Cache Niveau="lvl1">
-					<Capacite Unite="Mo">2</Capacite>
-				</Cache>
-				
-				<NbCore>4</NbCore>
-			  <Arch Nom="x64"/>
-			</CPU>
--->
+			<header class="subheader">Mat&eacute;riel </header>
 			<p>
 				CPU :
 				<?php
@@ -59,7 +51,6 @@ $ram = $pc->getElementsByTagName("RAM");
 					echo $cache->getAttribute("Niveau")." : ";
 					echo $cache->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
 					echo $cache->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")." ";
-
 				}
 				?>
 			</p>
@@ -76,8 +67,45 @@ $ram = $pc->getElementsByTagName("RAM");
 					
 				?>
 			</p>
-			<p>
+
+			<!-- 
+		
+				<Connectique Nom="HDMI" /> 
+			</GPU>
 			
+			<BIOS Version="3.0" Nom="EFI" /> -->
+			<p>
+				Carte m&egrave;re :
+				<?php 
+				$cm = $cm->item(0);
+					
+				echo " Socket ";
+				echo $cm->getElementsByTagName("Socket")->item(0)->nodeValue;
+				echo " Chipset ";
+				echo $cm->getElementsByTagName("Chipset")->item(0)->nodeValue;
+					
+				?>
+			</p>
+			<p>
+				Carte graphique :
+				<?php 
+				$gpu = $gpu->item(0);
+					
+				echo $gpu->getAttribute("Nom")." @";
+				echo $gpu->getElementsByTagName("Freq")->item(0)->nodeValue;
+				echo $gpu->getElementsByTagName("Freq")->item(0)->getAttribute("Unite");
+					
+				echo "  ";
+				$gram = $gpu->getElementsByTagName("RAM")->item(0);
+					
+				echo $gram->getElementsByTagName("TYPE")->item(0)->nodeValue." ";
+				echo $gram->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
+				echo $gram->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")."@";
+				echo $gram->getElementsByTagName("Freq")->item(0)->nodeValue;
+				echo $gram->getElementsByTagName("Freq")->item(0)->getAttribute("Unite")." ";
+					
+				echo $gpu->getElementsByTagName("Connectique")->item(0)->getAttribute("Nom");
+				?>
 			</p>
 		</article>
 		<article id="config">
