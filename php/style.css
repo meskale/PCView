@@ -1,17 +1,23 @@
 body {
-	background-image: url("img/bg.jpg");
+	background-image: url("img/bg.png");
+	background-repeat: no-repeat;
+	color : #00cbfd;
 }
 
 li {
 	margin-bottom : 6px;
 	list-style-image: url("img/li.png");
 }
+a,a:VISITED ,a:AFTER {
+	text-decoration: none;
+	color : #00cbfd;
+}
 
 footer {
 	
 
 	border: 1px solid;
-	background: #999999;
+	background: #132b5b;
 	
 	margin-top: 10px;
 	margin-left : auto;
@@ -20,6 +26,7 @@ footer {
 	width: 800px;
 	height: 100px;
 	
+	color : #00cbfd ;
 	
 	border-radius : 10px;
 }
@@ -32,7 +39,7 @@ article {
 	
 	width: 600px;
 	
-	color: #000000;
+	color : #FFFFFF ;
 }
 
 #content {
@@ -40,7 +47,7 @@ article {
 	margin-left : auto;
 	margin-right: auto;
 	width: 800px; border : 1px solid;
-	background: #999999;
+	background: #132b5b;
 	border: 1px solid;
 	border-radius : 10px;
 }
@@ -58,7 +65,7 @@ article {
 }
 
 .tab td {
-	background: #999999;
+	background: #076596;
 	
 	padding: 5px;
 	
@@ -67,12 +74,12 @@ article {
 }
 
 .tab th {
-	border: 3px solid #007000;
+	border: 3px solid #00cbfd;
 	border-radius: 5px;
+
+	background: #146d93;
 	
-	background: #005500;
-	
-	color: #00FF00;
+
 }
 
 .header {
@@ -90,14 +97,14 @@ article {
 	width: 400px;
 	height: 110px;
 	
-	background: #CCCCCC;
+	background: #146d93;
 	
 }
 
 
 .subheader {
 	
-	border: 2px solid #666666;
+	border: 2px solid #00cbfd;
 	border-radius: 20px;
 	
 	text-align: center;
@@ -105,10 +112,11 @@ article {
 	margin-left : auto;
 	margin-right : auto;
 	margin-bottom: 5px;
+	margin-top: 5px;
 	
 	width : 200px;
 	
-	background: rgb(200,200,200);
+	background: #146d93;
 	
 	
 }

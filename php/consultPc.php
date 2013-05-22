@@ -16,6 +16,7 @@ $cpu 			= $pc->getElementsByTagName("CPU");
 $ram 			= $pc->getElementsByTagName("RAM");
 $cm 			= $pc->getElementsByTagName("CM");
 $gpu 			= $pc->getElementsByTagName("GPU");
+$bios			= $pc->getElementsByTagName("BIOS");
 
 ?>
 <!DOCTYPE html >
@@ -67,13 +68,6 @@ $gpu 			= $pc->getElementsByTagName("GPU");
 					
 				?>
 			</p>
-
-			<!-- 
-		
-				<Connectique Nom="HDMI" /> 
-			</GPU>
-			
-			<BIOS Version="3.0" Nom="EFI" /> -->
 			<p>
 				Carte m&egrave;re :
 				<?php 
@@ -107,12 +101,25 @@ $gpu 			= $pc->getElementsByTagName("GPU");
 				echo $gpu->getElementsByTagName("Connectique")->item(0)->getAttribute("Nom");
 				?>
 			</p>
+			<p>
+			BIOS : 
+				<?php 
+				$bios = $bios->item(0);
+				
+					echo "Version : ";
+					echo $bios->getAttribute("Version");
+					echo "  Nom : ";
+					echo $bios->getAttribute("Nom"); 
+				
+				?>
+			</p>
+			
 		</article>
 		<article id="config">
 			<header class="subheader">
-				D&eacute;tails g&eacute;n&eacute;ral de &lt;
-				<?php echo $_GET["id"]; ?>
-				&gt;
+				D&eacute;tails g&eacute;n&eacute;ral de 
+				<strong><?php echo $_GET["id"]; ?></strong>
+				
 			</header>
 			<table class="tab">
 				<tr>

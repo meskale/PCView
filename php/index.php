@@ -9,14 +9,14 @@
 require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
-$pcs =$flotte->getPcList();  
+$pcs =$flotte->getPcList();
 $nbpc =$pcs->length;
 $nbpcpp = 4; //nombre de pc par page
 $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 
 if(isset($_GET["page"]))
-	$page = $_GET["page"];
-else 
+	$page = ($_GET["page"]!="")?$_GET["page"]:1;
+else
 	$page= 1;
 
 ?>
@@ -36,8 +36,12 @@ else
 					<nav id="listPc">
 						<ul>
 							<?php 
-
-							for($i=0+ ($page-1) ; $i<$nbpcpp+($page-1) ;$i++){
+							
+							$startIndex = 	($page-1)*$nbpcpp ;
+							$endIndex = $page*$nbpcpp;
+							$endIndex -= (($endIndex-$nbpc)>0)?($endIndex-$nbpc):0;
+							
+							for($i=$startIndex; $i< $endIndex ;$i++){
     	echo "<li><a href='consultPc.php?id=";
     	echo $pcs->item($i)->getAttribute("id")."'>";
     	echo $pcs->item($i)->getElementsByTagName("Nom")->item(0)->nodeValue;
@@ -49,11 +53,14 @@ else
 				</td>
 			</tr>
 			<tr>
-				<td>
+				<td align="center">
+				
 				<?php 
-
-
-				?></td>
+				for($j=0;$j<$nbpg;$j++){
+						echo "<a href=\"index.php?page=".($j+1)."\" >".($j+1)."</a>&nbsp;&nbsp;";
+						}
+						?>
+				</td>
 			</tr>
 		</table>
 	</div>
