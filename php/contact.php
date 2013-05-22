@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>PCView</title>
 <LINK rel="stylesheet" type="text/css" href="css/cssmenu.css">
+<LINK rel="stylesheet" type="text/css" href="css/pclist.css">
 </head>
 
 
