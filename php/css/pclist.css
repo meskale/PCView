@@ -31,7 +31,7 @@ footer{
   display: block;
   margin: 16px;
   padding-bottom: 100px;
-  background-image: url(/UTBM/img/homer_ordi_footer.png) left no-repeat;
+  background-image: url(/UTBM/img/homer_ordi_footer.png);
   vertical-align:center;
   border-radius:20px 20px 20px 20px;
   background-color:#EFE;
