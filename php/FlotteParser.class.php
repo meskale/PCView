@@ -1,4 +1,11 @@
 <?php
+/**
+ * flotte parser/(writer)
+ * se charge de fournir l'interface avec le fichier XML
+ * 
+ * @author jojo
+ *
+ */
 
 class FlotteParser{
 
@@ -12,7 +19,8 @@ class FlotteParser{
 		$this->flotte = new DOMDocument();
 		$this->flotte->load($file);
 
-		if(!$this->flotte->validate())echo "fichier XML corrompu, des erreurs peuvent survenir";
+		$this->flotte->validate() or
+		 die("fichier XML corrompu, merci de contacter le webadmin");
 	}
 
 
@@ -31,31 +39,11 @@ class FlotteParser{
 	 * @return DOMNode
 	 */
 	public function getPcById($id){
-		for($i=0;$i<$this->getPcList()->length;$i++)
-		if(strcmp($this->getPcList()->item($i)->getAttribute("id"), $id)==0)
-			return $this->getPcList()->item($i);
 
-	}
-	/**
-	 * Retourne une liste de pc filtrer selon les critères fournis
-	 * Correspondance Exact sur un seul critère pour l'instant
-	 * 
-	 * @param array(tag/attribute,name,value) $filter
-	 */
-	public function getFilteredPc($filter){
-		$fl = $this->getPcList();
-		
-		for($i=0;$i<$fl->length;$i++){
-			
-			switch ($filter["type"]){
-					case "att" :
-						
-					break;
-			}
-			
-		}
+		 return $this->flotte->getElementById("$id");
 		
 	}
+	
 
 
 
