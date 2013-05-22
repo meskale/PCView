@@ -5,6 +5,8 @@
 <title>PCView</title>
 <LINK
 	rel="stylesheet" type="text/css" href="UTBM/css/cssmenu.css">
+	<LINK
+	rel="stylesheet" type="text/css" href="UTBM/css/pclist.css">
 </head>
 
 

@@ -39,6 +39,11 @@ footer{
 }
 
 label {
+  text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #090;
+  padding: 16px;
+  font-weight: lighter;
  margin-top:10px;
  display:block;
  }
@@ -48,6 +53,13 @@ label.inline {
  }
 input, textarea, select, option {
  background-color:#EFE;
+ font-size:120%;
+ margin-left:40px;
+ }
+ 
+ #message {
+    width:500px;
+	height:300px;
  }
 input, textarea, select {
  padding:3px;
