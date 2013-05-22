@@ -32,9 +32,9 @@ class Flotte {
                                                                                                                                  
 			if ($ua->getName() == $name ) {                                                                                      
                                                                                                                                  
-				echo "<h1 id=\"pc\">PC " . ($i+1) . " : " .$ua->getName() . "</h1></br>";     
+				echo "<h1 id=\"pc\">PC " . ($i+1) . " : " .$ua->getName() . "</h1><br />";     
 				
-				echo "<ul>" ;
+				echo "<ul id=\"pclist\">" ;
                                                                                                                                  
 				echo "<li id=\"stockages\"><h2>Stockages : </h2></li>";                                                      
                           
@@ -45,7 +45,7 @@ class Flotte {
 					foreach($ua->getStockages()[$i] as $key => $stoParam) {                                                      
 						echo "<li id=\"item\">" . $key . " : " . $stoParam . "</li>";          
 					}     
-					echo "</ul>" ;					
+					echo "</ul><br />" ;					
                                                                                                                                  
 				} 
 				echo "</ul><br />" ;
@@ -59,7 +59,7 @@ class Flotte {
 					foreach($ua->getInterfaces()[$i] as $key => $intParam) {                                                     
 						echo "<li id=\"item\">" . $key . " : " . $intParam . "</li>";          
 					}      
-					echo "</ul>" ;
+					echo "</ul><br />" ;
                                                                                                                                  
 				}
 				echo "</ul><br />" ;	
@@ -74,7 +74,7 @@ class Flotte {
 					foreach($ua->getPeripheriques()[$i] as $key => $perParam) {                                                  
 						echo "<li id=\"item\">" . $key . " : " . $perParam . "</li>";          
 					}                                                                                                            
-					echo "</ul>" ;
+					echo "</ul><br />" ;
 				}    
 				echo "</ul><br />" ;				
                                                                                                                                  
@@ -127,7 +127,7 @@ class Flotte {
 					foreach($ua->getSoftwares()[$i] as $key => $softParam) {                                                     
 						echo "<li id=\"item\">" . $key . " : " . $softParam . "</li>";         
 					}
-					echo "</ul>" ;
+					echo "</ul><br />" ;
                                                                                                                                  
 				}          
 				echo "</ul><br />" ;

@@ -50,7 +50,7 @@
 
 		echo "<FORM  METHOD=\"GET\" ENCTYPE=\"x-www-form-urlencoded\"> ";
 
-		echo "<SELECT ONCHANGE=\"location = this.options[this.selectedIndex].value;\" name=\"nom\" size=\"10\">";
+		echo "<SELECT ONCHANGE=\"location = this.options[this.selectedIndex].value;\" name=\"nom\" size=\"7\">";
 		foreach ($flotte->getFlotte() as $PC) {
 		$pcname = $PC->getName();
 		echo "<OPTION type=\"text\" value=\"/?pc=" ; echo $pcname . "\">" . $pcname;

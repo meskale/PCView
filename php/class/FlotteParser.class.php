@@ -124,7 +124,7 @@ class FlotteParser {
 		$stockage["Nom"] = $this->getNode($pc, "Stockage", $i)->getAttribute("Nom");
 		$stockage["Support"] = $this->getNode($this->getNode($pc, "Stockage", $i), "Support", 0)->getAttribute("Nom");
 		$stockage["Connectique"] = $this->getNode($this->getNode($pc, "Stockage", $i), "Connectique", 0)->getAttribute("Nom");
-		$stockage["Capacite"] = $this->getValue($this->getNode($pc, "Stockage", $i), "Capacite", 0) . " " . $this->getNode($this->getNode($pc, "Stockage", $i), "Capacite", $i)->getAttribute("Unite");
+		$stockage["Capacite"] = $this->getValue($this->getNode($pc, "Stockage", $i), "Capacite", 0) . " " . $this->getNode($this->getNode($pc, "Stockage", $i), "Capacite", 0)->getAttribute("Unite");
 
 		return $stockage;
 	}

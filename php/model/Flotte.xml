@@ -84,6 +84,11 @@
           <Connectique Nom="FIREWIRE" />
           <Capacite Unite="To">1</Capacite>
         </Stockage>
+		<Stockage Nom="Disque Dur C3:">
+          <Support Nom="SSD" />
+          <Connectique Nom="FIREWIRE" />
+          <Capacite Unite="To">1</Capacite>
+        </Stockage>
       </Stockages>
       <Interfaces>
         <Interface Nom="Carte Wifi2">
