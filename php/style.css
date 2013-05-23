@@ -1,6 +1,11 @@
 body {
+	
 	background-image: url("img/bg.png");
-	background-repeat: no-repeat;
+	
+	background-size : 100% 100%;
+	
+	min-height: 800px;
+	
 	color : #00cbfd;
 }
 
@@ -11,6 +16,12 @@ li {
 a,a:VISITED ,a:AFTER {
 	text-decoration: none;
 	color : #00cbfd;
+}
+a:hover{
+	font-size: 1.1em;
+}
+p{
+	padding-left: 10px;
 }
 
 footer {
@@ -86,6 +97,7 @@ article {
 	
 	border: 2px solid #FFFFFF;
 	border-radius: 20px;
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
 	
 	text-align: center;
 	

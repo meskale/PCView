@@ -11,7 +11,7 @@ $flotte = new FlotteParser("Flotte.xml");
 
 $pcs =$flotte->getPcList();
 $nbpc =$pcs->length;
-$nbpcpp = 4; //nombre de pc par page
+$nbpcpp = 6; //nombre de pc par page
 $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 
 if(isset($_GET["page"]))

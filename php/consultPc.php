@@ -41,7 +41,6 @@ $bios			= $pc->getElementsByTagName("BIOS");
 				<?php
 				$cpu = $cpu->item(0);
 
-
 				echo $cpu->getAttribute("Nom")." ";
 				echo $cpu->getElementsByTagName("NbCore")->item(0)->nodeValue."core@";
 				echo $cpu->getElementsByTagName("Freq")->item(0)->nodeValue;
@@ -102,24 +101,23 @@ $bios			= $pc->getElementsByTagName("BIOS");
 				?>
 			</p>
 			<p>
-			BIOS : 
+				BIOS :
 				<?php 
 				$bios = $bios->item(0);
-				
-					echo "Version : ";
-					echo $bios->getAttribute("Version");
-					echo "  Nom : ";
-					echo $bios->getAttribute("Nom"); 
-				
+
+				echo "Version : ";
+				echo $bios->getAttribute("Version");
+				echo "  Nom : ";
+				echo $bios->getAttribute("Nom");
+
 				?>
 			</p>
-			
 		</article>
 		<article id="config">
 			<header class="subheader">
-				D&eacute;tails g&eacute;n&eacute;ral de 
-				<strong><?php echo $_GET["id"]; ?></strong>
-				
+				D&eacute;tails g&eacute;n&eacute;ral de <strong><?php echo $_GET["id"]; ?>
+				</strong>
+
 			</header>
 			<table class="tab">
 				<tr>
