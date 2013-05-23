@@ -1,11 +1,5 @@
-<!DOCTYPE html >
-<html>
-
-<title>PC View</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<meta charset="UTF-8" />
-</head>
 <?php
+session_start();
 require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
@@ -20,6 +14,14 @@ else
 	$page= 1;
 
 ?>
+
+<!DOCTYPE html >
+<html>
+
+<title>PC View</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta charset="UTF-8" />
+</head>
 
 <body>
 	<img src="img/logo.png" id="logo" alt="logo en forme de pc IBM" />

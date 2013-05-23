@@ -1,10 +1,20 @@
 <?php
-
+session_start();
 /**
  * affichage des details relatif a un PC dont l'id est transmis par GET
  */
 
-//récupération des sous arbres
+//récupération des sous arbo contenant les details désiré
+/*Pour ou Contre la class pc 
+ * 
+ * Pour : -simplification de l'ecriture -> facilité d'accés
+ * 		  - logique métier 
+ * 
+ * Contre : -redondance des informations -> performance...
+ * 			-Fonction d'ajout plus complexe 
+ * 		
+ */
+
 require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
@@ -34,84 +44,110 @@ $bios			= $pc->getElementsByTagName("BIOS");
 		<a href="index.php">Retour au menu</a>
 	</header>
 	<div id="content">
-		<article id="hardware">
+		<article id="hardware" >
 			<header class="subheader">Mat&eacute;riel </header>
-			<p>
-				CPU :
-				<?php
-				$cpu = $cpu->item(0);
+			<table>
+				<tr>
+					<td><strong>CPU </strong></td>
+					<td>
+						<p>
+							<?php
+							$cpu = $cpu->item(0);
 
-				echo $cpu->getAttribute("Nom")." ";
-				echo $cpu->getElementsByTagName("NbCore")->item(0)->nodeValue."core@";
-				echo $cpu->getElementsByTagName("Freq")->item(0)->nodeValue;
-				echo $cpu->getElementsByTagName("Freq")->item(0)->getAttribute("Unite")." ";
+							echo $cpu->getAttribute("Nom")." ";
+							echo $cpu->getElementsByTagName("NbCore")->item(0)->nodeValue."core@";
+							echo $cpu->getElementsByTagName("Freq")->item(0)->nodeValue;
+							echo $cpu->getElementsByTagName("Freq")->item(0)->getAttribute("Unite")." ";
 
-				foreach ($cpu->getElementsByTagName("Cache") as $cache ){
+							foreach ($cpu->getElementsByTagName("Cache") as $cache ){
 					echo "cache ";
 					echo $cache->getAttribute("Niveau")." : ";
 					echo $cache->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
 					echo $cache->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")." ";
 				}
 				?>
-			</p>
-			<p>
-				RAM :
-				<?php
-				$ram = $ram->item(0);
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>RAM </strong></td>
+					<td>
+						<p>
 
-				echo $ram->getElementsByTagName("TYPE")->item(0)->nodeValue." ";
-				echo $ram->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
-				echo $ram->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")."@";
-				echo $ram->getElementsByTagName("Freq")->item(0)->nodeValue;
-				echo $ram->getElementsByTagName("Freq")->item(0)->getAttribute("Unite");
-					
-				?>
-			</p>
-			<p>
-				Carte m&egrave;re :
-				<?php 
-				$cm = $cm->item(0);
-					
-				echo " Socket ";
-				echo $cm->getElementsByTagName("Socket")->item(0)->nodeValue;
-				echo " Chipset ";
-				echo $cm->getElementsByTagName("Chipset")->item(0)->nodeValue;
-					
-				?>
-			</p>
-			<p>
-				Carte graphique :
-				<?php 
-				$gpu = $gpu->item(0);
-					
-				echo $gpu->getAttribute("Nom")." @";
-				echo $gpu->getElementsByTagName("Freq")->item(0)->nodeValue;
-				echo $gpu->getElementsByTagName("Freq")->item(0)->getAttribute("Unite");
-					
-				echo "  ";
-				$gram = $gpu->getElementsByTagName("RAM")->item(0);
-					
-				echo $gram->getElementsByTagName("TYPE")->item(0)->nodeValue." ";
-				echo $gram->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
-				echo $gram->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")."@";
-				echo $gram->getElementsByTagName("Freq")->item(0)->nodeValue;
-				echo $gram->getElementsByTagName("Freq")->item(0)->getAttribute("Unite")." ";
-					
-				echo $gpu->getElementsByTagName("Connectique")->item(0)->getAttribute("Nom");
-				?>
-			</p>
-			<p>
-				BIOS :
-				<?php 
-				$bios = $bios->item(0);
+							<?php
+							$ram = $ram->item(0);
 
-				echo "Version : ";
-				echo $bios->getAttribute("Version");
-				echo "  Nom : ";
-				echo $bios->getAttribute("Nom");
+							echo $ram->getElementsByTagName("TYPE")->item(0)->nodeValue." ";
+							echo $ram->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
+							echo $ram->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")."@";
+							echo $ram->getElementsByTagName("Freq")->item(0)->nodeValue;
+							echo $ram->getElementsByTagName("Freq")->item(0)->getAttribute("Unite");
 
-				?>
-			</p>
+							?>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Carte m&egrave;re </strong></td>
+					<td>
+						<p>
+
+							<?php 
+							$cm = $cm->item(0);
+
+							echo " Socket ";
+							echo $cm->getElementsByTagName("Socket")->item(0)->nodeValue;
+							echo " Chipset ";
+							echo $cm->getElementsByTagName("Chipset")->item(0)->nodeValue;
+
+							?>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Carte graphique </strong></td>
+					<td>
+						<p>
+
+							<?php 
+							$gpu = $gpu->item(0);
+
+							echo $gpu->getAttribute("Nom")." @";
+							echo $gpu->getElementsByTagName("Freq")->item(0)->nodeValue;
+							echo $gpu->getElementsByTagName("Freq")->item(0)->getAttribute("Unite");
+
+							echo "  ";
+							$gram = $gpu->getElementsByTagName("RAM")->item(0);
+
+							echo $gram->getElementsByTagName("TYPE")->item(0)->nodeValue." ";
+							echo $gram->getElementsByTagName("Capacite")->item(0)->nodeValue." ";
+							echo $gram->getElementsByTagName("Capacite")->item(0)->getAttribute("Unite")."@";
+							echo $gram->getElementsByTagName("Freq")->item(0)->nodeValue;
+							echo $gram->getElementsByTagName("Freq")->item(0)->getAttribute("Unite")." ";
+
+							echo $gpu->getElementsByTagName("Connectique")->item(0)->getAttribute("Nom");
+							?>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>BIOS </strong></td>
+					<td>
+						<p>
+
+							<?php 
+							$bios = $bios->item(0);
+
+							echo "Version : ";
+							echo $bios->getAttribute("Version");
+							echo "  Nom : ";
+							echo $bios->getAttribute("Nom");
+
+							?>
+						</p>
+					</td>
+				</tr>
+			</table>
 		</article>
 		<article id="config">
 			<header class="subheader">
