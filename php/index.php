@@ -24,7 +24,7 @@ else
 </head>
 
 <body>
-	<img src="img/logo.png" id="logo" alt="logo en forme de pc IBM" />
+	<img src="img/logo1.png" id="logo" alt="logo en forme de pc IBM" />
 	<header class="header">
 		<h1>Bienvenue sur l'interface de consultation des PCs</h1>
 	</header>
