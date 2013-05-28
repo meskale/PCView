@@ -3,15 +3,42 @@ session_start();
 require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
-$pcs =$flotte->getPcList();
-$nbpc =$pcs->length;
-$nbpcpp = 4; //nombre de pc par page
-$nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 
+
+
+
+echo $_POST['filtre'];
+
+if(isset($_POST['filtre'])){
+	
+$pcs = $flotte->getPcList($_POST["filtre"]);
+}else{
+	$pcs =$flotte->getPcList();
+}
+
+$nbpc =$pcs->length;
+
+//On veut quel page
 if(isset($_GET["page"]))
 	$page = ($_GET["page"]!="")?$_GET["page"]:1;
 else
 	$page= 1;
+
+//On desire changer le nombre d'ŽlŽment par page ?
+if(isset($_POST['nbpcpp']) )
+{
+	$_SESSION['nbpcpp']=$_POST['nbpcpp'];
+	$nbpcpp = $_SESSION['nbpcpp'];
+}
+else {
+	if(isset($_SESSION["nbpcpp"])){
+		$nbpcpp = $_SESSION['nbpcpp'];
+	}else{
+		$nbpcpp = 4;
+	}
+}
+
+$nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 
 ?>
 
@@ -20,12 +47,23 @@ else
 <title>PC View</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width"> 
 </head>
-<body>
-	<img src="img/logo1.png" id="logo" alt="logo en forme de pc IBM" />
-	<header class="header">
-		<h1>Bienvenue sur l'interface de consultation des PCs</h1>
-	</header>
+<body onload="document.forms['param'].bs.style.display ='none'">
+	<div id="logo">
+		<img src="img/logo1.png"
+			style="position: absolute;"
+			alt="logo en forme de pc IBM" />
+		<header class="header">
+			<h1>Bienvenue sur l'interface de consultation des PCs</h1>
+		<form id='formFiltre' action="index.php" method="post">
+			<input type="text" name="filtre" size="20" value="<?php echo $_POST['filtre'];?>" />
+			<input type="submit" value="chercher " />
+		</form>
+		
+		</header>
+	</div>
+
 	<div id="content">
 		<table class="tab" id="tabPc">
 			<tr>
@@ -36,12 +74,11 @@ else
 					<nav id="listPc">
 						<ul>
 							<?php 
-							
 							$startIndex = 	($page-1)*$nbpcpp ;
 							$endIndex = $page*$nbpcpp;
 							//retrait des itŽrations superflue, pour les pages partiels
 							$endIndex -= (($endIndex-$nbpc)>0)?($endIndex-$nbpc):0;
-							
+
 							for($i=$startIndex; $i< $endIndex ;$i++){
     	echo "<li><a href='consultPc.php?id=";
     	echo $pcs->item($i)->getAttribute("id")."'>";
@@ -54,13 +91,25 @@ else
 				</td>
 			</tr>
 			<tr>
-				<td align="center">
-				
-				<?php 
+				<td class="centerCell"><?php 
 				for($j=0;$j<$nbpg;$j++){
 						echo "<a href=\"index.php?page=".($j+1)."\" >".($j+1)."</a>&nbsp;&nbsp;";
 						}
 						?>
+					<form id="param" name="param" action='index.php'
+						onchange="document.forms['param'].submit()" method="post">
+						<select name="nbpcpp">
+							<option value="3"
+							<?php echo ($nbpcpp==3)?"selected='selected'":""; ?>>3</option>
+							<option value="5"
+							<?php echo ($nbpcpp==5)?"selected='selected'":""; ?>>5</option>
+							<option value="10"
+							<?php echo ($nbpcpp==10)?"selected='selected'":""; ?>>10</option>
+							<option value="20"
+							<?php echo ($nbpcpp==20)?"selected='selected'":""; ?>>20</option>
+						</select>
+						<button id="bs" type="submit">Appliquer</button>
+					</form>
 				</td>
 			</tr>
 		</table>

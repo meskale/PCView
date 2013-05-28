@@ -4,21 +4,26 @@ session_start();
  * affichage des details relatif a un PC dont l'id est transmis par GET
  */
 
-//récupération des sous arbo contenant les details désiré
-/*Pour ou Contre la class pc 
- * 
- * Pour : -simplification de l'ecriture -> facilité d'accés
- * 		  - logique métier 
- * 
- * Contre : -redondance des informations -> performance...
- * 			-Fonction d'ajout plus complexe 
- * 		
- */
 
 require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
-$pc = $flotte->getPcById($_GET["id"]);
+
+$xpath = $flotte->getXpath();
+
+
+$query ='PC[@id="'.$_GET["id"].'"]/Config';
+$entries = $xpath->query($query);
+
+
+//$pc = $flotte->getPcById($_GET["id"]);
+
+$pc = $entries->item(0);
+
+/**
+* 	Methode classique DOM
+*/
+
 $stockage 		= $pc->getElementsByTagName("Stockage");
 $interfaces 	= $pc->getElementsByTagName("Interface");
 $peripheriques  = $pc->getElementsByTagName("Peripherique");
@@ -28,21 +33,34 @@ $cm 			= $pc->getElementsByTagName("CM");
 $gpu 			= $pc->getElementsByTagName("GPU");
 $bios			= $pc->getElementsByTagName("BIOS");
 
+/**
+ * Methode XPath
+*/
+$stockage = $xpath->query('Stockages/Stockage',$pc);
+$interfaces = $xpath->query('Interfaces/Interface',$pc);
+$peripheriques = $xpath->query('Peripheriques/Peripherique',$pc);
+
+
 ?>
 <!DOCTYPE html >
 <html>
-
 <title>PC View</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width"> 
 </head>
 <body>
-
-	<img src="img/logo1.png" id="logo" alt="logo en forme de pc IBM" />
-	<header class="header">
+	<div id="logo">
+		<img src="img/logo1.png"
+			style="position: absolute;"
+			alt="logo en forme de pc IBM" />
+		<header class="header">
 		<h1>Consultation</h1>
 		<a href="index.php">Retour au menu</a>
 	</header>
+	</div>
+
+	
 	<div id="content">
 		<article id="hardware" >
 			<header class="subheader">Mat&eacute;riel </header>
@@ -52,6 +70,7 @@ $bios			= $pc->getElementsByTagName("BIOS");
 					<td>
 						<p>
 							<?php
+							
 							$cpu = $cpu->item(0);
 
 							echo $cpu->getAttribute("Nom")." ";
@@ -73,7 +92,6 @@ $bios			= $pc->getElementsByTagName("BIOS");
 					<td><strong>RAM </strong></td>
 					<td>
 						<p>
-
 							<?php
 							$ram = $ram->item(0);
 
@@ -91,7 +109,6 @@ $bios			= $pc->getElementsByTagName("BIOS");
 					<td><strong>Carte m&egrave;re </strong></td>
 					<td>
 						<p>
-
 							<?php 
 							$cm = $cm->item(0);
 
@@ -117,6 +134,7 @@ $bios			= $pc->getElementsByTagName("BIOS");
 							echo $gpu->getElementsByTagName("Freq")->item(0)->getAttribute("Unite");
 
 							echo "  ";
+
 							$gram = $gpu->getElementsByTagName("RAM")->item(0);
 
 							echo $gram->getElementsByTagName("TYPE")->item(0)->nodeValue." ";
@@ -134,7 +152,6 @@ $bios			= $pc->getElementsByTagName("BIOS");
 					<td><strong>BIOS </strong></td>
 					<td>
 						<p>
-
 							<?php 
 							$bios = $bios->item(0);
 
@@ -153,13 +170,10 @@ $bios			= $pc->getElementsByTagName("BIOS");
 			<header class="subheader">
 				D&eacute;tails g&eacute;n&eacute;ral de <strong><?php echo $_GET["id"]; ?>
 				</strong>
-
 			</header>
 			<table class="tab">
 				<tr>
-					<th colspan="4">Stockages</th>
-				
-				
+					<th colspan="4">Stockages</th>		
 				<tr>
 					<th>Disque</th>
 					<th>Taille</th>
@@ -167,7 +181,6 @@ $bios			= $pc->getElementsByTagName("BIOS");
 					<th>Connectique</th>
 				</tr>
 				<?php
-
 				foreach($stockage as $dd){
 		echo "<tr><td>".$dd->getAttribute("Nom")."</td>";
 		echo "<td>".$dd->nodeValue;
