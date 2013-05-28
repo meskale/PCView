@@ -9,11 +9,7 @@
 
 class FlotteParser{
 
-	
-		
-	// We starts from the root element
-	
-		
+			
 	private $flotteX;
 	private $flotte;
 
@@ -28,13 +24,13 @@ class FlotteParser{
 		 die("fichier XML corrompu, merci de contacter le webadmin");
 		
 		$this->flotteX = new DOMXpath($this->flotte);
-
-		
 	}
 
 
 	/**
 	 * Liste de tout les pcs present dans la flotte
+	 * filtrage par occurence dans la totalitŽ des nodevalue
+	 * 	
 	 * @return DOMNodeList
 	 */
 	public function getPcList($filtre =""){
@@ -44,7 +40,10 @@ class FlotteParser{
 		}
 		else 
 		{
-			$query = "//PC[contains(.,'".$filtre."')]";
+			//php support XPath 1.0 -> pas de lower/upper-case translate a la place
+			$query = "//PC[contains(translate(.,'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+					translate('".$filtre."','abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'))]";
+	
 			return $this->flotteX->query($query);
 		}
 	}

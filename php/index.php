@@ -4,17 +4,12 @@ require_once 'FlotteParser.class.php';
 $flotte = new FlotteParser("Flotte.xml");
 
 
+if(isset($_POST['filtre']))
+	$_SESSION['filtre']=$_POST['filtre'];
 
 
+$pcs = $flotte->getPcList($_SESSION["filtre"]);
 
-echo $_POST['filtre'];
-
-if(isset($_POST['filtre'])){
-	
-$pcs = $flotte->getPcList($_POST["filtre"]);
-}else{
-	$pcs =$flotte->getPcList();
-}
 
 $nbpc =$pcs->length;
 
@@ -34,7 +29,7 @@ else {
 	if(isset($_SESSION["nbpcpp"])){
 		$nbpcpp = $_SESSION['nbpcpp'];
 	}else{
-		$nbpcpp = 4;
+		$nbpcpp = 5;
 	}
 }
 
@@ -49,15 +44,15 @@ $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width"> 
 </head>
-<body onload="document.forms['param'].bs.style.display ='none'">
+<body >
 	<div id="logo">
 		<img src="img/logo1.png"
 			style="position: absolute;"
-			alt="logo en forme de pc IBM" />
+			alt="logo en forme de pc" />
 		<header class="header">
 			<h1>Bienvenue sur l'interface de consultation des PCs</h1>
 		<form id='formFiltre' action="index.php" method="post">
-			<input type="text" name="filtre" size="20" value="<?php echo $_POST['filtre'];?>" />
+			<input type="text" name="filtre" size="20" value="<?php echo $_SESSION['filtre'];?>" />
 			<input type="submit" value="chercher " />
 		</form>
 		

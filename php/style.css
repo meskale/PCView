@@ -1,7 +1,5 @@
-
 body {
-	background : #FFFFFF url("img/bg.jpg") no-repeat top left;
-	min-height: 800px;
+	background: #FFFFFF url("img/bg.jpg") no-repeat top left;
 	color: #00cbfd;
 }
 
@@ -19,22 +17,25 @@ a:hover {
 	font-size: 1.1em;
 }
 
+input[type='text'] {
+	background: #00CCFF;
+	border: #00AADD solid 2px;
+	border-radius: 4px;
+}
+
 p {
 	padding-left: 10px;
 }
 
 footer {
 	border: 1px solid;
+	border-radius: 10px;
 	background: #132b5b;
-
-	margin : 10px auto;
-	
-	padding : 5px;
-	
+	margin: 10px auto;
+	padding: 5px;
 	width: 800px;
 	height: 100px;
 	color: #00cbfd;
-	border-radius: 10px;
 }
 
 article {
@@ -42,16 +43,16 @@ article {
 	border: 3px solid #BBBBBB;
 	border-radius: 5px;
 	width: 600px;
-	
 }
 
+/*******************************************
+		Id
+*********************************************/
 #content {
 	margin: 0 auto;
-
 	width: 800px;
 	border: 1px solid;
-	background: #132b5b;
-	
+	background: #122a5a;
 	border: 2px solid;
 	border-radius: 10px;
 }
@@ -62,11 +63,13 @@ article {
 	margin: 10px;
 }
 
-#logo{
-	width: 800px;
+#logo {
 	margin: 0 auto;
-	
 }
+
+/*******************************************
+		Classes
+*********************************************/
 .tab {
 	margin: 10px;
 }
@@ -85,61 +88,46 @@ article {
 }
 
 .header {
-	
-	
-	border : 2px solid #FFFFFF;
+	border: 2px solid #00cbfd;
 	border-radius: 20px;
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
 	text-align: center;
-	
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 00px;
-	margin-bottom: 5px;
-	
-	
+	margin: 0px auto 10px auto;
 	width: 400px;
-
-	padding : 5px;
+	padding: 5px;
 	background: #146d93;
-	border: 2px solid #FFFFFF;
 }
-
 
 .subheader {
 	border: 2px solid #00cbfd;
 	border-radius: 20px;
 	text-align: center;
-
-	margin : 5px auto;
-	
-	width: 200px;
+	margin: 5px auto; width : 200px;
 	background: #146d93;
-}
-
-.centerCell{
-	text-align: center;
 	
 }
 
+.centerCell {
+	text-align: center;
+}
+
+/*******************************************
+		Media queries
+*********************************************/
 @media screen and (max-width:500px) {
 	#logo img {
 		display: none;
 	}
-	.header {
-		margin-left: 45px;
-		max-width: 350px;
+	#logo {
+		width: 410px;
 	}
 	#content {
-		max-width: 350px;
+		max-width: 400px;
 	}
-	
 	footer {
-		max-width: 350px;
+		max-width: 400px;
 	}
 	article {
-	
-		max-width: 340px;
+		max-width: 400px;
 	}
 }
-

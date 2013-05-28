@@ -154,7 +154,7 @@
 	<PC id="joseph">
 		<Id>
 			<Nom>Joseph</Nom>
-			<Modele>PC perso</Modele>
+			<Modele>perso</Modele>
 		</Id>
 		<Config>
 			<Stockages>
@@ -247,7 +247,7 @@
 	<PC id="boris">
 		<Id>
 			<Nom>Boris Grishenko</Nom>
-			<Modele>PC hacker mitm</Modele>
+			<Modele>hacker mitm</Modele>
 		</Id>
 		<Config>
 			<Stockages>
