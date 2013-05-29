@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>PCView</title>
-<LINK
-	rel="stylesheet" type="text/css" href="css/cssmenu.css">
-	<LINK
-	rel="stylesheet" type="text/css" href="css/pclist.css">
+<LINK rel="stylesheet" type="text/css" href="css/cssmenu.css">
+<LINK rel="stylesheet" type="text/css" href="css/pclist.css">
 </head>
 
 
@@ -65,7 +63,7 @@
 			</p>
 
 			<p>
-				<label for="message">Votre message : </label>
+				<label for="message">Votre nom : </label>
 				<textarea id="message" name="message"
 					placeholder="Entrez votre message ici">Message</textarea>
 			</p>

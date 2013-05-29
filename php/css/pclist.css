@@ -5,7 +5,7 @@
   font-size: 700%;
   color: #090;
   padding: 16px;
-  font-weight: lighter;
+  font-weight: darker;
   -moz-box-shadow: 2px 2px 6px #888;  
   -webkit-box-shadow: 2px 2px 6px #888;
   box-shadow: 2px 2px 6px #888;  
@@ -15,6 +15,7 @@
   padding-bottom: 100px;
   background:#EFE url(/UTBM/img/homer_ordi.png) left no-repeat;
   border-radius:20px 20px 20px 20px;
+  width:auto;
 }
 
 footer{
@@ -39,36 +40,34 @@ footer{
 }
 
 label {
-  font-size:120%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #090;
-  padding: 16px;
-  font-weight: lighter;
  margin-top:10px;
  display:block;
+ color:#1F1
  }
- 
 label.inline {
  display:inline;
  margin-right:50px;
  }
 input, textarea, select, option {
  background-color:#EFE;
- font-size:120%;
- margin-left:40px;
  }
  
- #message {
-    width:500px;
-	height:300px;
- }
+
 input, textarea, select {
  padding:3px;
  border:1px solid #F5C5C5;
  border-radius:5px;
  width:200px;
  box-shadow:1px 1px 2px #C0C0C0 inset;
+ }
  
+  textarea{
+	width:400px;
+	height:200px;
+ }
+ 
+ form {
+	margin-left:40px;
  }
  
  
@@ -109,8 +108,9 @@ h2 {
 
 ul{
 	float:center-left;
-	margin-left: 60px;
-	margin-right: 100px;
+	margin-left: 50px;
+	margin-right: 20px;
+	text-shadow: -1px -1px #6c6, 1px 1px #6c6, -3px 0 4px #FFF;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: darker;
     -moz-box-shadow: 2px 2px 6px #888;  
@@ -120,9 +120,24 @@ ul{
 	padding-top: 20px;
 	background-color:#FFF;
 	border-radius:20px 20px 20px 20px;
+	width:auto;
 }
 
 #pclist{
+	float:center-left;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-shadow: -1px -1px #6c6, 1px 1px #6c6, -3px 0 4px #FFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: darker;
+    -moz-box-shadow: 2px 2px 6px #888;  
+    -webkit-box-shadow: 2px 2px 6px #888;  
+    box-shadow: 2px 2px 6px #888;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	background-color:#FFF;
+	border-radius:20px 20px 20px 20px;
+	width:auto;
 	background-color:#EFE;
 }
 
@@ -243,4 +258,29 @@ body {
  color: black;
  display : list-item;
  list-style-image : url(puce.gif);
+}
+
+@media screen and (max-width: 700px)  {
+	
+	ul{
+		margin-left:0px;
+	}
+	
+	#pc {
+		font-size:500%;
+		background:none;
+	}
+
+}
+
+@media screen and (max-width: 550px)  {
+	
+	#item{
+		margin-left:-1px;
+	}
+	
+	#pc {
+		font-size:300%;
+	}
+
 }
