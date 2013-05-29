@@ -1,7 +1,8 @@
 <?php                                                                                                                            
 
 
-echo "<LINK rel=\"stylesheet\" type=\"text/css\" href=\"UTBM/css/pclist.css\">";
+echo "<LINK rel=\"stylesheet\" type=\"text/css\" href=\"PCView/css/pclist.css\">";
+
 /**                                                                                                                              
  *	@desc                                                                                                                        
  *	@package                                                                                                                     

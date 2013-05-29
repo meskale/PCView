@@ -1,7 +1,7 @@
 <?php
 
-require('UTBM/class/Flotte.class.php');
-require('UTBM/class/PC.class.php');
+require('PCView/class/Flotte.class.php');
+require('PCView/class/PC.class.php');
 
 /**
  *	@desc
@@ -20,7 +20,7 @@ class FlotteParser {
 
 	public function parse() {
 		$doc = new DOMDocument();
-		$doc->load( 'UTBM/model/Flotte.xml' );
+		$doc->load( 'PCView/model/Flotte.xml' );
 		$flotte = new Flotte();
 			
 		$nodes = $doc->getElementsByTagName( "PC" );

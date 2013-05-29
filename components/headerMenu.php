@@ -5,7 +5,7 @@
 		<div id="cssmenu">
 			<ul id="onglets">
 				<li class="active\"><a href="index.php"> Accueil </a></li>
-				<li><a href="UTBM/contact.php"> Contact </a></li>
+				<li><a href="PCView/contact.php"> Contact </a></li>
 				<li><a href="Livre_or.html"> Livre d\'or </a></li>
 				<li><a href="Equipe.html"> L\'équipe </a></li>
 				<li><a href="Inscription.html"> S\'inscrire </a></li>

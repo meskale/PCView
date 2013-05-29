@@ -5,7 +5,7 @@
 <meta name="viewport" content="user-scalable=no, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, width=device-width">
 <title>PCView</title>
 <LINK
-	rel="stylesheet" type="text/css" href="UTBM/css/cssmenu.css">
+	rel="stylesheet" type="text/css" href="PCView/css/cssmenu.css">
 </head>
 
 
@@ -16,7 +16,7 @@
 		<div id="cssmenu">
 			<ul id="onglets">
 				<li class="active\"><a href="index.php"> Accueil </a></li>
-				<li><a href="UTBM/contact.php"> Contact </a></li>
+				<li><a href="PCView/contact.php"> Contact </a></li>
 				<li><a href="Livre_or.html"> Livre d'or </a></li>
 				<li><a href="Equipe.html"> L'équipe </a></li>
 				<li><a href="Inscription.html"> S'inscrire </a></li>
