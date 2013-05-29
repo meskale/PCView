@@ -1,286 +1,279 @@
-#pc{
-  font-size: 32px;
-  text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 700%;
-  color: #090;
-  padding: 16px;
-  font-weight: darker;
-  -moz-box-shadow: 2px 2px 6px #888;  
-  -webkit-box-shadow: 2px 2px 6px #888;
-  box-shadow: 2px 2px 6px #888;  
-  text-align: center;
-  display: block;
-  margin: 16px;
-  padding-bottom: 100px;
-  background:#EFE url(/PCView/img/homer_ordi.png) left no-repeat;
-  border-radius:20px 20px 20px 20px;
-  width:auto;
+#pc {
+	font-size: 32px;
+	text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 700%;
+	color: #090;
+	padding: 16px;
+	font-weight: darker;
+	-moz-box-shadow: 2px 2px 6px #888;
+	-webkit-box-shadow: 2px 2px 6px #888;
+	box-shadow: 2px 2px 6px #888;
+	text-align: center;
+	display: block;
+	margin: 16px;
+	padding-bottom: 100px;
+	background: #EFE url(/PCView/img/homer_ordi.png) left no-repeat;
+	border-radius: 20px 20px 20px 20px;
+	width: auto;
 }
 
-footer{
-  font-size: 200%;
-  text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #090;
-  padding: 16px;
-  font-weight: darker;
-  -moz-box-shadow: 2px 2px 6px #888;  
-  -webkit-box-shadow: 2px 2px 6px #888;  
-  box-shadow: 2px 2px 6px #888;  
-  text-align: center;
-  display: block;
-  margin: 16px;
-  padding-bottom: 100px;
-  background-image: url(/UTBM/img/homer_ordi_footer.png);
-  vertical-align:center;
-  border-radius:20px 20px 20px 20px;
-  background-color:#EFE;
-  
+footer {
+	font-size: 200%;
+	text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #090;
+	padding: 16px;
+	font-weight: darker;
+	-moz-box-shadow: 2px 2px 6px #888;
+	-webkit-box-shadow: 2px 2px 6px #888;
+	box-shadow: 2px 2px 6px #888;
+	text-align: center;
+	display: block;
+	margin: 16px;
+	padding-bottom: 100px;
+	background-image: url(/UTBM/img/homer_ordi_footer.png);
+	vertical-align: center;
+	border-radius: 20px 20px 20px 20px;
+	background-color: #EFE;
 }
 
 label {
- margin-top:10px;
- display:block;
- color:#1F1
- }
-label.inline {
- display:inline;
- margin-right:50px;
- }
-input, textarea, select, option {
- background-color:#EFE;
- }
- 
-
-input, textarea, select {
- padding:3px;
- border:1px solid #F5C5C5;
- border-radius:5px;
- width:200px;
- box-shadow:1px 1px 2px #C0C0C0 inset;
- }
- 
-  textarea{
-	width:400px;
-	height:200px;
- }
- 
- form {
-	margin-left:40px;
- }
- 
- 
- select {
- text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #090;
-  padding: 16px;
-  font-weight: darker;
-  font-size:130%;
-  -moz-box-shadow: 2px 2px 6px #888;  
-  -webkit-box-shadow: 2px 2px 6px #888;  
-  box-shadow: 2px 2px 6px #888;  
-  text-align: center;
-  display: block;
-  margin: 16px;
- margin-top:10px;
- margin-left:44%;
- }
-
-h2 {
-  font-size: 200%;
-  text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #090;
-  padding: 16px;
-  font-weight: darker; 
-  display: block;
-  margin: 16px;
-  padding-bottom: 40px;
+	margin-top: 10px;
+	display: block;
+	color: #1F1
 }
 
+label.inline {
+	display: inline;
+	margin-right: 50px;
+}
+
+input,textarea,select,option {
+	background-color: #EFE;
+}
+
+input,textarea,select {
+	padding: 3px;
+	border: 1px solid #F5C5C5;
+	border-radius: 5px;
+	width: 400px;
+	box-shadow: 1px 1px 2px #C0C0C0 inset;
+}
+
+textarea {
+	width: 400px;
+	height: 200px;
+}
+
+form {
+	margin-left: 40px;
+}
+
+select {
+	text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #090;
+	padding: 16px;
+	font-weight: darker;
+	font-size: 130%;
+	-moz-box-shadow: 2px 2px 6px #888;
+	-webkit-box-shadow: 2px 2px 6px #888;
+	box-shadow: 2px 2px 6px #888;
+	text-align: center;
+	display: block;
+	margin: 16px;
+	margin-top: 10px;
+	margin-left: 44%;
+}
+
+h2 {
+	font-size: 200%;
+	text-shadow: -1px -1px #0c0, 1px 1px #060, -3px 0 4px #000;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #090;
+	padding: 16px;
+	font-weight: darker;
+	display: block;
+	margin: 16px;
+	padding-bottom: 40px;
+}
 
 #item {
 	list-style-position: inherit;
 	margin-left: 200px;
 }
 
-ul{
-	float:center-left;
+ul {
+	float: center-left;
 	margin-left: 50px;
 	margin-right: 20px;
 	text-shadow: -1px -1px #6c6, 1px 1px #6c6, -3px 0 4px #FFF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: darker;
-    -moz-box-shadow: 2px 2px 6px #888;  
-    -webkit-box-shadow: 2px 2px 6px #888;  
-    box-shadow: 2px 2px 6px #888;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: darker;
+	-moz-box-shadow: 2px 2px 6px #888;
+	-webkit-box-shadow: 2px 2px 6px #888;
+	box-shadow: 2px 2px 6px #888;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	background-color:#FFF;
-	border-radius:20px 20px 20px 20px;
-	width:auto;
+	background-color: #FFF;
+	border-radius: 20px 20px 20px 20px;
+	width: auto;
 }
 
-#pclist{
-	float:center-left;
+#pclist {
+	float: center-left;
 	margin-left: 20px;
 	margin-right: 20px;
 	text-shadow: -1px -1px #6c6, 1px 1px #6c6, -3px 0 4px #FFF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: darker;
-    -moz-box-shadow: 2px 2px 6px #888;  
-    -webkit-box-shadow: 2px 2px 6px #888;  
-    box-shadow: 2px 2px 6px #888;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: darker;
+	-moz-box-shadow: 2px 2px 6px #888;
+	-webkit-box-shadow: 2px 2px 6px #888;
+	box-shadow: 2px 2px 6px #888;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	background-color:#FFF;
-	border-radius:20px 20px 20px 20px;
-	width:auto;
-	background-color:#EFE;
+	background-color: #FFF;
+	border-radius: 20px 20px 20px 20px;
+	width: auto;
+	background-color: #EFE;
 }
 
 body {
-	background-color:#111;
+	background-color: #111;
 }
-
 
 #stockages {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display: list-item;
- list-style-image: url(puce.jpg);
-}
-#stockage {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- padding-left: 40px;
- background: url(/UTBM/img/stockage.jpg) left center no-repeat;
- list-style-position: inside;
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.jpg);
 }
 
+#stockage {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	padding-left: 40px;
+	background: url(/UTBM/img/stockage.jpg) left center no-repeat;
+	list-style-position: inside;
+}
 
 #interfaces {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
-}
-#interface {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- padding-left: 40px;
- background: url(/UTBM/img/interface.jpg) left center no-repeat;
- list-style-position: inside;
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
 
+#interface {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	padding-left: 40px;
+	background: url(/UTBM/img/interface.jpg) left center no-repeat;
+	list-style-position: inside;
+}
 
 #peripheriques {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
-}
-#peripherique {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
 
+#peripherique {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
+}
 
 #cpu {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
+
 #cm {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
+
 #ram {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
+
 #gpu {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
 
 #bios {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
-
 
 #softwares {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
-}
-#soft {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
 
+#soft {
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
+}
 
 #os {
- font-family: Arial, sans-serif;
- font-size: 100%;
- color: black;
- display : list-item;
- list-style-image : url(puce.gif);
+	font-family: Arial, sans-serif;
+	font-size: 100%;
+	color: black;
+	display: list-item;
+	list-style-image: url(puce.gif);
 }
 
-@media screen and (max-width: 700px)  {
-	
-	ul{
-		margin-left:0px;
+@media screen and (max-width: 700px) {
+	ul {
+		margin-left: 0px;
 	}
-	
 	#pc {
-		font-size:500%;
-		background:none;
+		font-size: 500%;
+		background: none;
 	}
-
 }
 
-@media screen and (max-width: 550px)  {
-	
-	#item{
-		margin-left:-1px;
+@media screen and (max-width: 550px) {
+	#item {
+		margin-left: -1px;
 	}
-	
 	#pc {
-		font-size:300%;
+		font-size: 300%;
 	}
-
 }

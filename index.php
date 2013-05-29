@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="user-scalable=no, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, width=device-width">
+<meta name="viewport"
+	content="user-scalable=no, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, width=device-width">
 <title>PCView</title>
-<LINK
-	rel="stylesheet" type="text/css" href="PCView/css/cssmenu.css">
+<LINK rel="stylesheet" type="text/css" href="PCView/css/cssmenu.css">
 </head>
 
 
@@ -34,7 +34,7 @@
 
 
 	<div id="content">
-	
+
 		<?php
 
 		require('class/FlotteParser.class.php');
@@ -49,18 +49,31 @@
 
 		<?php
 
-		echo "<FORM  METHOD=\"GET\" ENCTYPE=\"x-www-form-urlencoded\"> ";
+		echo "<FORM action=\".\" method=\"GET\"> ";
 
-		echo "<SELECT ONCHANGE=\"location = this.options[this.selectedIndex].value;\" name=\"nom\" size=\"7\">";
+		echo "<SELECT action=\"./?pc=\" name=\"pc\" size=\"7\">";
 		foreach ($flotte->getFlotte() as $PC) {
 		$pcname = $PC->getName();
-		echo "<OPTION type=\"text\" value=\"/?pc=" ; echo $pcname . "\">" . $pcname;
+		echo "<OPTION type=\"submit\" value=\"";echo $pcname . "\">" . $pcname;
 		}
 
+		
+
+		?>
+		
+		<noscript>
+			<p>
+				<input id="label" type="submit" value="Montrer les caractéristiques du PC" />
+			</p>
+		</noscript>
+
+		<?php 
+		
 		echo "</SELECT>";
 		echo "</FORM>";
 
 		if (isset($_GET["pc"])) {
+			echo $_GET["pc"];
 			$name = urldecode($_GET["pc"]);
 			$flotte->displayByName($name);
 		}
@@ -68,19 +81,19 @@
 		?>
 
 	</div>
-	
-<footer>
 
-	<br />
-	4 rue des Jasmins <br />
-	<span class="cp">68190</span> <span class="city">ENSISHEIM</span>
-	<p class="telmail">
-		<span class="tel"> <span class="intitule">Téléphone : </span>06 66 79 17 62 </span> 
-		<br />
-		<span class="mail"> <span class="intitule">Mail : </span>cebim68@gmail.com </span>
-	</P>
+	<footer>
 
-	<br /> <a href="#header" title="Haut de la page">Haut de la page</a>
-</footer>
+		<br /> 4 rue des Jasmins <br /> <span class="cp">68190</span> <span
+			class="city">ENSISHEIM</span>
+		<p class="telmail">
+			<span class="tel"> <span class="intitule">Téléphone : </span>06 66 79
+				17 62
+			</span> <br /> <span class="mail"> <span class="intitule">Mail : </span>cebim68@gmail.com
+			</span>
+		</P>
+
+		<br /> <a href="#header" title="Haut de la page">Haut de la page</a>
+	</footer>
 </body>
 </html>
