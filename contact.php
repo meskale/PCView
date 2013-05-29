@@ -31,7 +31,7 @@
 	</header>
 
 
-	<div id="content">
+	<div id="contact">
 
 		<form action="#">
 			<p>

@@ -43,7 +43,7 @@
 		$parser = new FlotteParser();
 		$flotte = $parser->parse();
 
-		echo "<h2>Il y a " . count($flotte->getFlotte()) . " PC dans la flotte</h2>";
+		echo "<div id=\"pccount\"><h2>Il y a " . count($flotte->getFlotte()) . " PC dans la flotte</h2></div>";
 
 		?>
 
@@ -57,23 +57,23 @@
 		echo "<OPTION type=\"submit\" value=\"";echo $pcname . "\">" . $pcname;
 		}
 
-		
+
 
 		?>
-		
+
 		<noscript>
 			<p>
-				<input id="label" type="submit" value="Montrer les caractéristiques du PC" />
+				<input id="label" type="submit" value="OK" />
 			</p>
 		</noscript>
 
 		<?php 
-		
+
 		echo "</SELECT>";
 		echo "</FORM>";
 
 		if (isset($_GET["pc"])) {
-			echo $_GET["pc"];
+// 			echo $_GET["pc"];
 			$name = urldecode($_GET["pc"]);
 			$flotte->displayByName($name);
 		}
