@@ -95,8 +95,11 @@ h2 {
 	font-weight: darker;
 	display: block;
 	margin: 16px;
-	padding-bottom: 40px;
 }
+
+/* #pccount h2 { */
+/* 		margin-top: 80%; */
+/* 	} */
 
 #item {
 	list-style-position: inherit;
@@ -156,7 +159,7 @@ body {
 	color: black;
 	display: list-item;
 	padding-left: 40px;
-	background: url(/UTBM/img/stockage.jpg) left center no-repeat;
+	background: url(/PCView/img/stockage.jpg) left center no-repeat;
 	list-style-position: inside;
 }
 
@@ -173,8 +176,9 @@ body {
 	font-size: 100%;
 	color: black;
 	display: list-item;
-	padding-left: 40px;
-	background: url(/UTBM/img/interface.jpg) left center no-repeat;
+	margin-left: 10px;
+	padding-left: 35px;
+	background: url(/PCView/img/interface.jpg) left center no-repeat;
 	list-style-position: inside;
 }
 
@@ -191,6 +195,7 @@ body {
 	font-size: 100%;
 	color: black;
 	display: list-item;
+	margin-left: 60px;
 	list-style-image: url(puce.gif);
 }
 
@@ -248,6 +253,7 @@ body {
 	color: black;
 	display: list-item;
 	list-style-image: url(puce.gif);
+	margin-left: 60px;
 }
 
 #os {
@@ -301,7 +307,10 @@ input[type=submit] {
 	font-family: Arial, sans-serif;
 	font-size: 500%;
 	padding-top: 1px; /*permet le centrage vertical*/
+	padding-left: 1px; /*permet le centrage */
+	margin-left:15%;
 	text-align: center;
+	float:center;
 	color: #00d700;
 	background: #444;
 	background: -webkit-linear-gradient(#555, #2C2C2C);
@@ -347,6 +356,9 @@ input[type=submit]:active {
 	#pccount h2 {
 		padding-top: 20%;
 	}
+	#contact form {
+		padding-top: 20%;
+	}
 }
 
 @media screen and (min-width: 550px) and (max-width: 650px) {
@@ -360,20 +372,65 @@ input[type=submit]:active {
 	#pccount h2 {
 		padding-top: 50%;
 	}
+	#contact form {
+		padding-top: 40%;
+	}
 }
 
 @media screen and (max-width: 550px) {
 	#item {
+		font-size: 90%;
 		margin-left: -1px;
 	}
 	#pc {
-		font-size: 300%;
+		font-size: 200%;
 	}
 	#pccount h2 {
-		padding-top: 80%;
+		margin-top: 200px;
 	}
-	
 	select {
-		width:90%;
+		width: 90%;
+	}
+	ul {
+		font-size: 100%;
+		padding-right: 1px;
+		margin-left: 1px;
+		margin-right: 1px;
+		padding-left: 1px;
+	}
+	li {
+		font-size: 100%;
+		padding-right: 1px;
+		margin-left: 1px;
+		margin-right: 1px;
+		padding-left: 1px;
+	}
+	#pclist {
+		padding-left: 1px;
+		margin-left: 1px;
+		margin-right: 1px;
+	}
+	h2 {
+		font-size: 150%;
+		padding-right: 1px;
+		margin-left: 1px;
+		margin-right: 1px;
+		padding-left: 1px;
+	}
+	#content {
+		font-size: 90%;
+	}
+	form, select {
+		margin-top: 5%;
+		padding-right: 1px;
+		margin-left: 1px;
+		margin-right: 1px;
+		padding-left: 1px;
+	}
+	footer {
+		font-size: 100%;
+		padding-left: 1px;
+		margin-left: 1px;
+		margin-right: 1px;
 	}
 }
