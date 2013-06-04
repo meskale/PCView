@@ -38,7 +38,7 @@ $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 ?>
 
 <!DOCTYPE html >
-<html>
+<html lang="fr">
 <title>PC View</title>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <meta charset="UTF-8" />
@@ -52,7 +52,7 @@ $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 		<header class="header">
 			<h1>Bienvenue sur l'interface de consultation des PCs</h1>
 		<form id='formFiltre' action="index.php" method="post">
-			<input type="text" name="filtre" size="20" value="<?php echo $_SESSION['filtre'];?>" />
+			<label for="filtre">Recherche :</label><input  type="text" id="filtre" name="filtre" size="20" value="<?php echo $_SESSION['filtre'];?>" />
 			<input type="submit" value="chercher " />
 		</form>
 		
@@ -76,9 +76,9 @@ $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 
 							for($i=$startIndex; $i< $endIndex ;$i++){
     	echo "<li><a href='consultPc.php?id=";
-    	echo $pcs->item($i)->getAttribute("id")."'>";
+    	echo $pcs->item($i)->getAttribute("id")."'><strong>";
     	echo $pcs->item($i)->getElementsByTagName("Nom")->item(0)->nodeValue;
-    	echo "</a></li>";
+    	echo "</strong></a></li>";
 		}
 		?>
 						</ul>
@@ -92,8 +92,9 @@ $nbpg = ceil($nbpc/$nbpcpp); //nombre de page
 						}
 						?>
 					<form id="param" name="param" action='index.php'
-						onchange="document.forms['param'].submit()" method="post">
-						<select name="nbpcpp">
+						 method="post">
+						<label for="nbpcpp">Nombre de pc par page</label>
+						<select id="nbpcpp" name="nbpcpp" onchange="document.forms['param'].submit()">
 							<option value="3"
 							<?php echo ($nbpcpp==3)?"selected='selected'":""; ?>>3</option>
 							<option value="5"
