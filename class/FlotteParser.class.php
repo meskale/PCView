@@ -13,20 +13,23 @@ require('PCView/class/PC.class.php');
  */
 class FlotteParser {
 	
+	private $copyNode;
+	private $doc;
+	
 	public function __construct() {
 		
 	}
 
 
 	public function parse() {
-		$doc = new DOMDocument();
-		$doc->load( 'PCView/model/Flotte.xml' );
+		$this->doc = new DOMDocument();
+		$this->doc->load( 'PCView/model/Flotte.xml' );
 		$flotte = new Flotte();
 			
-		$nodes = $doc->getElementsByTagName( "PC" );
+		$nodes = $this->doc->getElementsByTagName( "PC" );
 			
 		foreach ($nodes as $ua) {
-			
+			$this->copyNode = $ua;
 			
 			$poste = new PC();
 			
@@ -67,6 +70,14 @@ class FlotteParser {
 		
 		return $flotte;
 	}
+	
+	public function createPC($pc) {
+		$newNode = $this->copyNode->cloneNode(true);
+		$newNode->setAttribute("id","id".rand(0,1000));
+		$this->doc->documentElement->appendChild($newNode);
+		$this->doc->save('PCView/model/Flotte.xml');
+	}
+	
 
 	private function getPCNameByNode($pc) {
 		return $this->getValue($pc, "Nom", 0);
