@@ -15,7 +15,8 @@
 		<!-- Menu -->
 		<div id="cssmenu">
 			<ul id="onglets">
-				<li class="active\"><a title="Page principale" href="index.php"> Accueil </a></li>
+				<li class="active\"><a title="Page principale" href="index.php">
+						Accueil </a></li>
 				<li><a href="PCView/contact.php"> Contact </a></li>
 				<li><a href="Livre_or.html"> Livre d'or </a></li>
 				<li><a href="Equipe.html"> L'équipe </a></li>
@@ -42,8 +43,8 @@
 
 		$parser = new FlotteParser();
 		$flotte = $parser->parse();
-		$parser->createPC($flotte->getFlotte()[0]);
-		
+		// 		$parser->createPC($flotte->getFlotte()[0]);
+
 		echo "<div id=\"pccount\"><h2>Il y a " . count($flotte->getFlotte()) . " PC dans la flotte</h2></div>";
 
 		?>

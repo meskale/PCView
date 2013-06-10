@@ -180,9 +180,8 @@ body {
 	font-size: 100%;
 	color: black;
 	display: inline;
-	max-width: 400px;
 	padding-left:40px;
-	background: url(/PCView/img/interface.jpg) left center no-repeat;
+	background: url(/PCView/img/interface.jpg) left no-repeat;
 	list-style-position: inside;
 }
 
