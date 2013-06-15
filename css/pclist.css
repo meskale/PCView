@@ -14,6 +14,7 @@
 	margin: 16px;
 	padding-bottom: 100px;
 	background: #EFE url(/PCView/img/homer_ordi.png) left no-repeat;
+	background-color: #676;
 	border-radius: 20px 20px 20px 20px;
 	width: auto;
 }
@@ -35,7 +36,7 @@ footer {
 	background-image: url(/UTBM/img/homer_ordi_footer.png);
 	vertical-align: center;
 	border-radius: 20px 20px 20px 20px;
-	background-color: #EFE;
+	background-color: #676;
 }
 
 label {
@@ -116,7 +117,7 @@ ul {
 	box-shadow: 2px 2px 6px #888;
 	padding-bottom: 20px;
 	padding-top: 20px;
-	background-color: #FFF;
+	background-color: #FFC;
 	border-radius: 20px 20px 20px 20px;
 	width: auto;
 }
@@ -137,7 +138,7 @@ ul {
 	border-radius: 20px 20px 20px 20px;
 	width: auto;
 	height: auto;
-	background-color: #EFE;
+	background-color: #676;
 }
 
 body {
@@ -164,7 +165,7 @@ body {
 	font-size: 100%;
 	color: black;
 	padding-left: 40px;
-	background: url(/PCView/img/stockage.jpg) left no-repeat;
+/* 	background: url(/PCView/img/stockage.jpg) left no-repeat; */
 	list-style-position: inside;
 }
 
@@ -181,7 +182,7 @@ body {
 	color: black;
 	display: inline;
 	padding-left:40px;
-	background: url(/PCView/img/interface.jpg) left no-repeat;
+/* 	background: url(/PCView/img/interface.jpg) left no-repeat; */
 	list-style-position: inside;
 }
 
